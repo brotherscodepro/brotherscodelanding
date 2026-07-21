@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Brothers Code — Websites &amp; Apps</title>
-<meta name="description" content="Criamos experiências digitais que fazem a diferença. Websites e apps feitos por dois irmãos, em Portugal.">
+<meta name="description" content="Estúdio digital em Portugal. Criamos websites, aplicações e lojas online — e mantemos os nossos próprios produtos.">
 <meta name="theme-color" content="#0D1117">
 <meta property="og:title" content="Brothers Code — Websites &amp; Apps">
 <meta property="og:description" content="Criamos experiências digitais que fazem a diferença.">
@@ -147,8 +147,8 @@ header.stuck{background:rgba(13,17,23,.8);backdrop-filter:blur(16px);border-bott
 
 /* ============ números ============ */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;border-block:1px solid var(--line);padding:30px 0;}
-.stat b{display:block;font-weight:700;font-size:clamp(1.7rem,4vw,2.5rem);letter-spacing:-.03em;color:var(--white);line-height:1;}
-.stat span{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);}
+.stat b{display:block;font-weight:600;font-size:clamp(1.15rem,2.4vw,1.5rem);letter-spacing:-.02em;color:var(--white);line-height:1.2;}
+.stat span{display:block;margin-top:6px;font-size:12.5px;letter-spacing:.02em;color:var(--muted);}
 @media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr);gap:26px;}}
 
 /* ============ projetos ============ */
@@ -220,15 +220,6 @@ section.block{padding:clamp(64px,11vh,120px) 0;}
 .md .art .th{width:44px;height:34px;border-radius:5px;background:#1B2331;flex:none;}
 .md .art .tx b{display:block;height:6px;width:118px;border-radius:3px;background:rgba(255,255,255,.30);}
 .md .art .tx i{display:block;height:5px;width:78px;border-radius:3px;background:rgba(255,255,255,.13);margin-top:6px;}
-
-/* --- por vir --- */
-.soon-band{display:flex;align-items:center;gap:22px;margin-top:74px;padding:26px 30px;border-radius:16px;
-  border:1px dashed rgba(229,231,235,.16);background:rgba(20,26,36,.5);flex-wrap:wrap;}
-.soon-band svg{width:44px;height:50px;flex:none;animation:pulse 3.4s ease-in-out infinite;}
-@keyframes pulse{50%{opacity:.4;}}
-.soon-band h4{margin:0;font-weight:600;color:var(--white);font-size:1.05rem;}
-.soon-band p{margin:4px 0 0;color:var(--muted);font-size:14.5px;}
-.soon-band .tag{margin-left:auto;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--violet);}
 
 /* ============ quem somos ============ */
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:46px;}
@@ -358,13 +349,13 @@ footer{border-top:1px solid var(--line);padding:44px 0 40px;overflow:hidden;}
   <section class="hero">
     <div class="wrap hero-in">
       <div>
-        <div class="eyebrow">Dois irmãos · Portugal</div>
+        <div class="eyebrow">Estúdio digital · Portugal</div>
         <h1>
           <span class="ln"><i>Criamos experiências</i></span>
           <span class="ln"><i>digitais que</i></span>
           <span class="ln"><i class="grad-text">fazem a diferença.</i></span>
         </h1>
-        <p>Um trata do backend, o outro do produto, do design e do conteúdo. Construímos websites e apps pensados para quem vive cá — e usamo-los todos os dias antes de os mostrar a alguém.</p>
+        <p>Somos um estúdio pequeno, e isso é uma vantagem: falas diretamente com quem constrói o teu projeto. Fazemos websites, aplicações e lojas online — do primeiro rascunho à manutenção depois de estar no ar.</p>
         <div class="hero-cta">
           <a class="btn mag" href="#projetos">Ver os projetos</a>
           <a class="btn ghost mag" href="#contacto">Falar connosco</a>
@@ -379,10 +370,10 @@ footer{border-top:1px solid var(--line);padding:44px 0 40px;overflow:hidden;}
 
   <div class="wrap">
     <div class="stats rv">
-      <div class="stat"><b data-count="3">0</b><span>Projetos</span></div>
-      <div class="stat"><b data-count="2">0</b><span>Irmãos</span></div>
-      <div class="stat"><b data-count="100" data-suffix="%">0</b><span>Em português</span></div>
-      <div class="stat"><b data-count="24" data-suffix="h">0</b><span>Para responder</span></div>
+      <div class="stat"><b>Websites</b><span>Institucionais e landing pages</span></div>
+      <div class="stat"><b>Aplicações</b><span>Web e Android</span></div>
+      <div class="stat"><b>Lojas online</b><span>Catálogo e pagamentos</span></div>
+      <div class="stat"><b>Manutenção</b><span>Atualizações e suporte</span></div>
     </div>
   </div>
 
@@ -391,7 +382,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 40px;overflow:hidden;}
       <div class="head rv">
         <div class="eyebrow">O que já está no ar</div>
         <h2>Os nossos projetos</h2>
-        <p>Produtos próprios, construídos do zero e mantidos por nós todas as semanas.</p>
+        <p>Não são exemplos de portfólio: são produtos nossos, no ar e a ser usados.</p>
       </div>
 
       <div class="proj rv">
@@ -452,17 +443,6 @@ footer{border-top:1px solid var(--line);padding:44px 0 40px;overflow:hidden;}
         </div>
       </div>
 
-      <div class="soon-band rv">
-        <svg viewBox="0 0 100 112" aria-hidden="true">
-          <path d="M50 3 95 29v54L50 109 5 83V29z" fill="none" stroke="#8E9BB0" stroke-width="6" stroke-linejoin="round" opacity=".55"/>
-          <text x="38" y="72" font-family="Poppins,sans-serif" font-weight="700" font-size="44" fill="#8E9BB0">?</text>
-        </svg>
-        <div>
-          <h4>A próxima app, ainda sem nome</h4>
-          <p>Saber quanto custa mesmo ter carro: abastecimentos, revisões, consumos e as despesas que ninguém soma.</p>
-        </div>
-        <div class="tag">Em desenvolvimento</div>
-      </div>
     </div>
   </section>
 
@@ -470,20 +450,21 @@ footer{border-top:1px solid var(--line);padding:44px 0 40px;overflow:hidden;}
     <div class="wrap">
       <div class="head rv">
         <div class="eyebrow">Quem somos</div>
-        <h2>Dois irmãos, <span class="grad-text">um stack</span></h2>
+        <h2>Um estúdio pequeno, <span class="grad-text">com produtos próprios</span></h2>
+        <p>Não vivemos só de trabalho para clientes: construímos e mantemos as nossas próprias apps. É isso que nos obriga a resolver, primeiro em casa, os mesmos problemas que os teus projetos vão ter.</p>
       </div>
       <div class="duo">
         <div class="bro rv glow">
-          <div class="role">Backend &amp; Infraestrutura</div>
-          <h4>O irmão dos servidores</h4>
-          <p>Bases de dados, autenticação, APIs e tudo o que tem de funcionar às 3 da manhã sem ninguém dar por isso.</p>
-          <div class="chips"><span>Supabase</span><span>Node</span><span>Postgres</span><span>Edge Functions</span></div>
+          <div class="role">O que construímos</div>
+          <h4>Websites, apps e lojas</h4>
+          <p>Desde uma página única para apresentar um negócio até uma aplicação com contas, base de dados e versão para telemóvel.</p>
+          <div class="chips"><span>WordPress</span><span>Landing pages</span><span>PWA</span><span>Android</span><span>E-commerce</span></div>
         </div>
         <div class="bro rv glow">
-          <div class="role">Produto, Design &amp; Conteúdo</div>
-          <h4>O irmão do produto</h4>
-          <p>Interfaces, SEO, texto e a obsessão por perceber o que as pessoas precisam mesmo — e cortar o resto.</p>
-          <div class="chips"><span>Design</span><span>SEO</span><span>WordPress</span><span>Conteúdo</span></div>
+          <div class="role">Com que ferramentas</div>
+          <h4>Infraestrutura moderna</h4>
+          <p>Nada de alojamentos lentos nem painéis que ninguém percebe. Publicação automática, base de dados gerida e domínio configurado por nós.</p>
+          <div class="chips"><span>Supabase</span><span>Postgres</span><span>Vercel</span><span>GitHub</span><span>SEO</span></div>
         </div>
       </div>
 
@@ -498,15 +479,15 @@ footer{border-top:1px solid var(--line);padding:44px 0 40px;overflow:hidden;}
     <div class="wrap">
       <div class="head rv">
         <div class="eyebrow">Como trabalhamos</div>
-        <h2>Três regras que não quebramos</h2>
+        <h2>Do primeiro email ao site no ar</h2>
       </div>
       <div class="steps">
-        <div class="step rv"><div class="num">01</div><h4>Lançamos cedo</h4>
-          <p>Preferimos uma versão simples no ar a uma versão perfeita por acabar. O que fica de fora entra depois, com quem já usa a decidir a ordem.</p></div>
-        <div class="step rv"><div class="num">02</div><h4>Escrevemos em português</h4>
-          <p>Tudo o que fazemos é pensado para quem vive cá — do simulador de IRS às notícias. Nada de traduções à pressa.</p></div>
-        <div class="step rv"><div class="num">03</div><h4>Mantemos o que criamos</h4>
-          <p>Nenhum projeto fica parado depois do lançamento. Corrigimos, medimos e voltamos a publicar todas as semanas.</p></div>
+        <div class="step rv"><div class="num">01</div><h4>Percebemos o que precisas</h4>
+          <p>Uma conversa sem compromisso para saber o objetivo, o prazo e o orçamento. Se acharmos que não somos a escolha certa para o teu caso, dizemos.</p></div>
+        <div class="step rv"><div class="num">02</div><h4>Construímos por partes</h4>
+          <p>Vais vendo o trabalho à medida que avança, em vez de esperares semanas por uma surpresa no fim. Mudar de ideias a meio sai sempre mais barato.</p></div>
+        <div class="step rv"><div class="num">03</div><h4>Publicamos e acompanhamos</h4>
+          <p>Tratamos do domínio, do alojamento e de pôr tudo no ar. Depois continuamos disponíveis para atualizações e correções.</p></div>
       </div>
     </div>
   </section>
@@ -591,14 +572,12 @@ footer{border-top:1px solid var(--line);padding:44px 0 40px;overflow:hidden;}
   var termEl = document.getElementById('termCode');
   if (termEl){
     var LINES = [
-      [['c-com','// manifesto.js — corre desde 2026']],
-      [['c-key','const'],['','\u00A0equipa\u00A0'],['c-pun','=\u00A0{\u00A0'],['c-key','irmaos'],['c-pun',':\u00A0'],['c-str','2'],['c-pun','\u00A0};']],
-      [['c-key','const'],['','\u00A0regras\u00A0'],['c-pun','=\u00A0[']],
-      [['c-str','\u00A0\u00A0"lancar cedo"'],['c-pun',',']],
-      [['c-str','\u00A0\u00A0"escrever em portugues"'],['c-pun',',']],
-      [['c-str','\u00A0\u00A0"manter o que criamos"']],
-      [['c-pun','];']],
-      [['c-key','while'],['c-pun','\u00A0('],['c-key','true'],['c-pun',')\u00A0{\u00A0'],['','construir'],['c-pun','();\u00A0}']]
+      [['c-com','// como um projeto anda ca por casa']],
+      [['c-key','const'],['','\u00A0projeto\u00A0'],['c-pun','=\u00A0'],['','conversa'],['c-pun','('],['c-str','"a tua ideia"'],['c-pun',');']],
+      [['','projeto'],['c-pun','.'],['','construir'],['c-pun','({\u00A0'],['c-key','porPartes'],['c-pun',':\u00A0'],['c-key','true'],['c-pun','\u00A0});']],
+      [['','projeto'],['c-pun','.'],['','publicar'],['c-pun','();']],
+      [['c-com','// depois de no ar, nao fica sozinho']],
+      [['c-key','while'],['c-pun','\u00A0('],['','noAr'],['c-pun',')\u00A0{\u00A0'],['','acompanhar'],['c-pun','();\u00A0}']]
     ];
     var typed = false;
     function typeTerm(){
