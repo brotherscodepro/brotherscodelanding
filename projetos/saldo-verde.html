@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saldo Verde — Brothers Code</title>
+<meta name="description" content="Saldo Verde: finanças pessoais em português, com simulador de IRS. Um projeto Brothers Code.">
+<meta name="theme-color" content="#0D1117">
+<meta property="og:title" content="Saldo Verde — Brothers Code">
+<meta property="og:description" content="Finanças pessoais sem folhas de cálculo, com simulador de IRS.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://brotherscode.pro/projetos/saldo-verde">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:image" content="https://brotherscode.pro/brand/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://brotherscode.pro/projetos/saldo-verde">
+<link rel="icon" href="/brand/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/projeto.css">
+<style>
+  :root{--accent:#16A34A;--accent-soft:rgba(22,163,74,.20);}
+  /* mockup do telemovel */
+  .phone{position:relative;width:262px;height:530px;border-radius:38px;background:#05070A;
+    border:8px solid #1B2331;box-shadow:0 40px 80px -30px rgba(0,0,0,.9),0 0 0 1px rgba(229,231,235,.06);
+    overflow:hidden;}
+  .phone .notch{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:78px;height:21px;
+    background:#0B0E13;border-radius:99px;z-index:3;}
+  .sv{padding:46px 17px 16px;font-size:11px;color:#DDF3E6;height:100%;
+    background:linear-gradient(180deg,#04120C,#05070A 60%);}
+  .sv .lbl{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#5E8A73;}
+  .sv .bal{font-weight:700;font-size:28px;color:#fff;letter-spacing:-.02em;margin-top:3px;}
+  .sv .pill{display:inline-block;font-size:9px;padding:3px 8px;border-radius:99px;
+    background:rgba(22,163,74,.18);color:#4ADE80;margin-top:7px;}
+  .sv .bars{display:flex;align-items:flex-end;gap:6px;height:80px;margin:20px 0 4px;}
+  .sv .bars i{flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,#22C55E,#15803D);}
+  .sv .row{display:flex;justify-content:space-between;padding:9px 0;border-top:1px solid rgba(255,255,255,.06);}
+  .sv .row em{font-style:normal;color:#9BB5A6;font-size:10px;}
+  .sv .row b{font-weight:500;font-size:11px;color:#fff;}
+  .sv .nav{display:flex;justify-content:space-between;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.07);}
+  .sv .nav i{width:27px;height:4px;border-radius:99px;background:rgba(255,255,255,.14);}
+  .sv .nav i:first-child{background:#22C55E;}
+</style>
+</head>
+<body>
+<div class="orb a" aria-hidden="true"></div><div class="orb b" aria-hidden="true"></div>
+
+<header>
+  <div class="wrap bar">
+    <a class="mark" href="/" aria-label="Brothers Code, início">
+      <svg viewBox="0 0 100 112" aria-hidden="true">
+        <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/>
+        </linearGradient></defs>
+        <path d="M50 3 95 29v54L50 109 5 83V29z" fill="none" stroke="url(#g1)" stroke-width="7" stroke-linejoin="round"/>
+        <text x="24" y="70" font-family="Poppins,sans-serif" font-weight="700" font-size="46" fill="#fff">B</text>
+        <path d="M63 41l18 15-18 15" fill="none" stroke="url(#g1)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="mark-txt"><b>BROTHERS CODE</b><span>WEBSITES &amp; APPS</span></span>
+    </a>
+    <a class="back" href="/#projetos"><i>&#8249;</i> Todos os projetos</a>
+  </div>
+</header>
+
+<main>
+  <section class="phero">
+    <div class="wrap two">
+      <div>
+        <div class="eyebrow">Projeto próprio · App</div>
+        <h1>Saldo <span class="accent">Verde</span></h1>
+        <p class="lead">Finanças pessoais sem folhas de cálculo. Regista as contas, percebe para onde vai o dinheiro ao fim do mês e simula o IRS com os escalões certos.</p>
+        <div class="cta">
+          <a class="btn solid" href="https://saldoverde.pt" target="_blank" rel="noopener">Abrir a app</a>
+          <a class="btn ghost" href="#funcionalidades">O que faz</a>
+        </div>
+        <div class="meta">
+          <div><span>Estado</span><b>Disponível</b></div>
+          <div><span>Plataformas</span><b>Android e Web</b></div>
+          <div><span>Idioma</span><b>Português</b></div>
+        </div>
+      </div>
+      <div class="stage">
+        <div class="phone">
+          <div class="notch"></div>
+          <div class="sv">
+            <div class="lbl">Saldo do mês</div>
+            <div class="bal">1.284,50 €</div>
+            <div class="pill">▲ 12% face a junho</div>
+            <div class="bars">
+              <i style="height:100%"></i><i style="height:64%"></i><i style="height:82%"></i>
+              <i style="height:45%"></i><i style="height:93%"></i><i style="height:58%"></i><i style="height:74%"></i>
+            </div>
+            <div class="row"><em>Supermercado</em><b>-64,20 €</b></div>
+            <div class="row"><em>Combustível</em><b>-52,00 €</b></div>
+            <div class="row"><em>Renda</em><b>-480,00 €</b></div>
+            <div class="row"><em>Simulação IRS</em><b>+312,80 €</b></div>
+            <div class="nav"><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap two">
+      <div class="rv">
+        <div class="eyebrow">O problema</div>
+        <h2>Toda a gente sabe quanto ganha. Poucos sabem para onde vai.</h2>
+      </div>
+      <div class="rv">
+        <p>A maioria das apps de finanças ou é estrangeira e ignora a realidade portuguesa, ou obriga a ligar a conta bancária logo no primeiro ecrã. E quem quer perceber o IRS acaba sempre na mesma folha de Excel herdada de alguém.</p>
+        <p>O Saldo Verde nasceu para resolver isso: registo rápido de despesas, categorias que fazem sentido cá, e um simulador de IRS que usa os escalões em vigor — sem pedir acesso a nada.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="funcionalidades">
+    <div class="wrap">
+      <div class="rv">
+        <div class="eyebrow">O que faz</div>
+        <h2>As funcionalidades principais</h2>
+      </div>
+      <div class="feats">
+        <div class="feat rv"><div class="ic">€</div><h3>Registo de despesas</h3>
+          <p>Adiciona um gasto em segundos, com categorias e notas. Sem ligar a conta bancária.</p></div>
+        <div class="feat rv"><div class="ic">◫</div><h3>Resumo do mês</h3>
+          <p>Um gráfico simples mostra onde o dinheiro foi parar e como se compara ao mês anterior.</p></div>
+        <div class="feat rv"><div class="ic">%</div><h3>Simulador de IRS</h3>
+          <p>Estimativa do imposto com os escalões atuais, incluindo as regras do IRS Jovem.</p></div>
+        <div class="feat rv"><div class="ic">↻</div><h3>Despesas fixas</h3>
+          <p>Renda, prestações e subscrições entram sozinhas todos os meses.</p></div>
+        <div class="feat rv"><div class="ic">◐</div><h3>Funciona offline</h3>
+          <p>Instala-se como app e continua a registar mesmo sem rede, sincronizando depois.</p></div>
+        <div class="feat rv"><div class="ic">↓</div><h3>Exportação</h3>
+          <p>Leva os teus dados contigo quando quiseres, sem ficares preso à app.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap two">
+      <div class="rv">
+        <div class="eyebrow">Por dentro</div>
+        <h2>Como está construída</h2>
+        <p>Uma aplicação web instalável, com base de dados e autenticação na Supabase e publicação contínua na Vercel. A versão Android é a mesma aplicação empacotada, o que significa que uma correção chega aos dois lados ao mesmo tempo.</p>
+        <div class="stack">
+          <span>Supabase</span><span>Postgres</span><span>Vercel</span><span>PWA</span><span>Android</span>
+        </div>
+      </div>
+      <div class="rv">
+        <div class="eyebrow">Estado</div>
+        <h2>Onde vai e o que se segue</h2>
+        <div class="timeline">
+          <div class="tl done"><b>Registo de despesas e resumo mensal</b><span>Disponível</span></div>
+          <div class="tl done"><b>Simulador de IRS</b><span>Disponível</span></div>
+          <div class="tl done"><b>Versão Android</b><span>Disponível</span></div>
+          <div class="tl"><b>Objetivos de poupança</b><span>Em desenvolvimento</span></div>
+          <div class="tl"><b>Partilha de contas entre duas pessoas</b><span>Planeado</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="endcta rv">
+        <h2>Experimenta o Saldo Verde</h2>
+        <p>Gratuito, em português e sem ligar a conta bancária.</p>
+        <a class="btn solid" href="https://saldoverde.pt" target="_blank" rel="noopener">Ir para saldoverde.pt</a>
+      </div>
+      <div class="sisters">
+        <a class="sister" href="/projetos/minuto-digital.html"><span>Outro projeto</span><b>Minuto Digital &#8250;</b></a>
+        <a class="sister" href="/#contacto"><span>Falar connosco</span><b>info@brotherscode.pro &#8250;</b></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>© 2026 Brothers Code · Feito em Portugal</div>
+    <div><a href="/">brotherscode.pro</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var h=document.querySelector('header');
+  addEventListener('scroll',function(){h.classList.toggle('stuck',scrollY>12);},{passive:true});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},
+      {threshold:.15,rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+  } else document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});
+})();
+</script>
+</body>
+</html>
