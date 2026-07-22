@@ -256,18 +256,50 @@ section.block{padding:clamp(64px,11vh,120px) 0;}
 .term .caret{display:inline-block;width:8px;height:15px;background:var(--violet);vertical-align:-2px;animation:blink 1s steps(1) infinite;}
 @keyframes blink{50%{opacity:0;}}
 
+/* ============ servicos ============ */
+.svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px;}
+.svc{position:relative;border-radius:16px;padding:28px;isolation:isolate;
+  background:linear-gradient(var(--panel),var(--panel)) padding-box,
+             linear-gradient(140deg,rgba(229,231,235,.14),rgba(229,231,235,.04)) border-box;
+  border:1px solid transparent;transition:transform .35s var(--e);}
+.svc::after{content:"";position:absolute;inset:0;z-index:-1;border-radius:16px;
+  background:radial-gradient(300px circle at var(--mx,50%) var(--my,0%),rgba(124,58,237,.18),transparent 62%);
+  opacity:0;transition:opacity .35s;}
+.svc:hover{transform:translateY(-6px);}
+.svc:hover::after{opacity:1;}
+.svc .ic{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:17px;
+  background:rgba(124,58,237,.16);color:#A78BFA;margin-bottom:16px;}
+.svc h4{font-weight:600;font-size:1.12rem;color:var(--white);margin:0 0 8px;letter-spacing:-.02em;}
+.svc p{margin:0;color:var(--muted);font-size:14.8px;}
+.svc .from{display:block;margin-top:16px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600;}
+@media(max-width:940px){.svcs{grid-template-columns:1fr 1fr;}}
+@media(max-width:640px){.svcs{grid-template-columns:1fr;}}
+
+/* ============ incluido ============ */
+.incl{margin-top:44px;border:1px solid var(--line);border-radius:18px;padding:clamp(26px,4vw,40px);
+  background:rgba(20,26,36,.55);}
+.incl h3{font-weight:600;font-size:1.25rem;color:var(--white);margin:0 0 20px;letter-spacing:-.02em;}
+.incl ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px 26px;}
+.incl li{position:relative;padding-left:28px;font-size:15px;color:var(--muted);}
+.incl li::before{content:"✓";position:absolute;left:0;top:0;color:#A78BFA;font-weight:700;}
+@media(max-width:720px){.incl ul{grid-template-columns:1fr;}}
+
 /* ============ processo ============ */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:46px;}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:46px;}
 .step{border-top:1px solid var(--line);padding-top:22px;position:relative;}
 .step::before{content:"";position:absolute;top:-1px;left:0;height:2px;width:0;background:var(--grad);transition:width 1s var(--e);}
 .step.in::before{width:100%;}
 .step:nth-child(2)::before{transition-delay:.15s;}
 .step:nth-child(3)::before{transition-delay:.3s;}
+.step:nth-child(4)::before{transition-delay:.45s;}
+.step .tagline{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
 .num{font-size:12px;font-weight:600;letter-spacing:.2em;background:var(--grad);
   -webkit-background-clip:text;background-clip:text;color:transparent;}
 .step h4{font-weight:600;font-size:1.05rem;color:var(--white);margin:8px 0;}
 .step p{margin:0;color:var(--muted);font-size:15px;}
-@media(max-width:860px){.steps{grid-template-columns:1fr;}}
+@media(max-width:980px){.steps{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.steps{grid-template-columns:1fr;}}
 
 /* ============ contacto ============ */
 .cta-band{position:relative;border-radius:26px;padding:clamp(36px,6vw,72px);text-align:center;overflow:hidden;
@@ -337,10 +369,10 @@ footer{border-top:1px solid var(--line);padding:44px 0 40px;overflow:hidden;}
       <span class="mark-txt"><b>BROTHERS CODE</b><span>WEBSITES &amp; APPS</span></span>
     </a>
     <nav class="nav">
+      <a class="lnk" href="#servicos">Serviços</a>
       <a class="lnk" href="#projetos">Projetos</a>
-      <a class="lnk" href="#quem">Quem somos</a>
       <a class="lnk" href="#processo">Como trabalhamos</a>
-      <a class="btn mag" href="#contacto">Falar connosco</a>
+      <a class="btn mag" href="#contacto">Pedir orçamento</a>
     </nav>
   </div>
 </header>
@@ -349,16 +381,16 @@ footer{border-top:1px solid var(--line);padding:44px 0 40px;overflow:hidden;}
   <section class="hero">
     <div class="wrap hero-in">
       <div>
-        <div class="eyebrow">Estúdio digital · Portugal</div>
+        <div class="eyebrow">Estúdio digital português</div>
         <h1>
           <span class="ln"><i>Criamos experiências</i></span>
           <span class="ln"><i>digitais que</i></span>
           <span class="ln"><i class="grad-text">fazem a diferença.</i></span>
         </h1>
-        <p>Somos um estúdio pequeno, e isso é uma vantagem: falas diretamente com quem constrói o teu projeto. Fazemos websites, aplicações e lojas online — do primeiro rascunho à manutenção depois de estar no ar.</p>
+        <p>Criamos websites, lojas online e aplicações à medida para empresas que querem uma presença online sólida — rápida, segura e simples de gerir no dia a dia.</p>
         <div class="hero-cta">
-          <a class="btn mag" href="#projetos">Ver os projetos</a>
-          <a class="btn ghost mag" href="#contacto">Falar connosco</a>
+          <a class="btn mag" href="#contacto">Pedir orçamento</a>
+          <a class="btn ghost mag" href="#projetos">Ver projetos</a>
         </div>
       </div>
       <div class="emblem" aria-hidden="true">
@@ -370,19 +402,75 @@ footer{border-top:1px solid var(--line);padding:44px 0 40px;overflow:hidden;}
 
   <div class="wrap">
     <div class="stats rv">
-      <div class="stat"><b>Websites</b><span>Institucionais e landing pages</span></div>
-      <div class="stat"><b>Aplicações</b><span>Web e Android</span></div>
-      <div class="stat"><b>Lojas online</b><span>Catálogo e pagamentos</span></div>
-      <div class="stat"><b>Manutenção</b><span>Atualizações e suporte</span></div>
+      <div class="stat"><b>Certificado SSL</b><span>Em todos os projetos</span></div>
+      <div class="stat"><b>Conformidade RGPD</b><span>Formulários e cookies</span></div>
+      <div class="stat"><b>Suporte em português</b><span>Fala com quem constrói</span></div>
+      <div class="stat"><b>Otimizado para telemóvel</b><span>E para o Google</span></div>
     </div>
   </div>
+
+  <section class="block" id="servicos">
+    <div class="wrap">
+      <div class="head rv">
+        <div class="eyebrow">O que fazemos</div>
+        <h2>Tudo o que precisa para estar online, <span class="grad-text">num só parceiro</span></h2>
+        <p>Da primeira conversa ao site publicado — e depois disso, também.</p>
+      </div>
+
+      <div class="svcs">
+        <div class="svc rv glow"><div class="ic">▤</div>
+          <h4>Websites profissionais</h4>
+          <p>Sites institucionais e páginas de apresentação rápidos, adaptados a telemóvel e fáceis de gerir sem saber programar.</p>
+          <span class="from">Sob orçamento</span></div>
+
+        <div class="svc rv glow"><div class="ic">⌗</div>
+          <h4>Lojas online</h4>
+          <p>Venda os seus produtos com pagamentos seguros, gestão simples de stock e envios configurados para Portugal.</p>
+          <span class="from">Sob orçamento</span></div>
+
+        <div class="svc rv glow"><div class="ic">◈</div>
+          <h4>Aplicações à medida</h4>
+          <p>Plataformas com contas de utilizador, base de dados e versão para telemóvel, quando um site normal não chega.</p>
+          <span class="from">Sob orçamento</span></div>
+
+        <div class="svc rv glow"><div class="ic">⚡</div>
+          <h4>Otimização e velocidade</h4>
+          <p>O seu site já existe mas está lento ou mal posicionado? Corrigimos performance, estrutura e erros técnicos.</p>
+          <span class="from">Sob orçamento</span></div>
+
+        <div class="svc rv glow"><div class="ic">✉</div>
+          <h4>Email profissional</h4>
+          <p>Endereços com o seu domínio, configurados com as proteções que evitam que as mensagens caiam no spam.</p>
+          <span class="from">Sob orçamento</span></div>
+
+        <div class="svc rv glow"><div class="ic">↻</div>
+          <h4>Manutenção e suporte</h4>
+          <p>Atualizações, cópias de segurança e monitorização, para não ser o cliente a descobrir que o site caiu.</p>
+          <span class="from">Sob orçamento</span></div>
+      </div>
+
+      <div class="incl rv">
+        <h3>Incluído em todos os projetos</h3>
+        <ul>
+          <li>Configuração técnica completa, do início ao fim</li>
+          <li>Certificado SSL e site seguro</li>
+          <li>Otimização para telemóvel e tablet</li>
+          <li>Conformidade RGPD nos formulários</li>
+          <li>Ligação ao Google Analytics e Search Console</li>
+          <li>Explicação de como gerir o site sozinho</li>
+          <li>Cópias de segurança automáticas</li>
+          <li>Domínio e alojamento configurados por nós</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
   <section class="block" id="projetos">
     <div class="wrap">
       <div class="head rv">
-        <div class="eyebrow">O que já está no ar</div>
-        <h2>Os nossos projetos</h2>
-        <p>Não são exemplos de portfólio: são produtos nossos, no ar e a ser usados.</p>
+        <div class="eyebrow">Trabalho nosso</div>
+        <h2>Projetos que falam <span class="grad-text">por nós</span></h2>
+        <p>Produtos que criámos e continuamos a manter — a melhor amostra do que fazemos por si.</p>
       </div>
 
       <div class="proj rv">
@@ -446,25 +534,25 @@ footer{border-top:1px solid var(--line);padding:44px 0 40px;overflow:hidden;}
     </div>
   </section>
 
-  <section class="block" id="quem">
+  <section class="block" id="porque">
     <div class="wrap">
       <div class="head rv">
-        <div class="eyebrow">Quem somos</div>
-        <h2>Um estúdio pequeno, <span class="grad-text">com produtos próprios</span></h2>
-        <p>Não vivemos só de trabalho para clientes: construímos e mantemos as nossas próprias apps. É isso que nos obriga a resolver, primeiro em casa, os mesmos problemas que os teus projetos vão ter.</p>
+        <div class="eyebrow">Porquê nós</div>
+        <h2>Trabalho próximo, <span class="grad-text">sem intermediários</span></h2>
+        <p>Somos um estúdio pequeno e isso é uma vantagem para si: fala diretamente com quem constrói o projeto, sem passar por gestores de conta nem call centers.</p>
       </div>
       <div class="duo">
         <div class="bro rv glow">
-          <div class="role">O que construímos</div>
-          <h4>Websites, apps e lojas</h4>
-          <p>Desde uma página única para apresentar um negócio até uma aplicação com contas, base de dados e versão para telemóvel.</p>
-          <div class="chips"><span>WordPress</span><span>Landing pages</span><span>PWA</span><span>Android</span><span>E-commerce</span></div>
+          <div class="role">Sem surpresas</div>
+          <h4>Sabe sempre em que pé está</h4>
+          <p>Orçamento claro antes de começar e acesso ao trabalho enquanto avança. Nada de esperar semanas para ver o resultado só no fim.</p>
+          <div class="chips"><span>Orçamento fechado</span><span>Prazos definidos</span><span>Sem custos escondidos</span></div>
         </div>
         <div class="bro rv glow">
-          <div class="role">Com que ferramentas</div>
-          <h4>Infraestrutura moderna</h4>
-          <p>Nada de alojamentos lentos nem painéis que ninguém percebe. Publicação automática, base de dados gerida e domínio configurado por nós.</p>
-          <div class="chips"><span>Supabase</span><span>Postgres</span><span>Vercel</span><span>GitHub</span><span>SEO</span></div>
+          <div class="role">Tecnologia atual</div>
+          <h4>Construído para durar</h4>
+          <p>Alojamento rápido, publicação automática e código que se mantém sem depender de quem o escreveu. O site é seu, e leva-o consigo.</p>
+          <div class="chips"><span>WordPress</span><span>Supabase</span><span>Vercel</span><span>SEO</span></div>
         </div>
       </div>
 
@@ -479,15 +567,18 @@ footer{border-top:1px solid var(--line);padding:44px 0 40px;overflow:hidden;}
     <div class="wrap">
       <div class="head rv">
         <div class="eyebrow">Como trabalhamos</div>
-        <h2>Do primeiro email ao site no ar</h2>
+        <h2>Um processo simples e <span class="grad-text">previsível</span></h2>
+        <p>Do primeiro email ao site no ar, sabe sempre qual é a fase seguinte.</p>
       </div>
       <div class="steps">
-        <div class="step rv"><div class="num">01</div><h4>Percebemos o que precisas</h4>
-          <p>Uma conversa sem compromisso para saber o objetivo, o prazo e o orçamento. Se acharmos que não somos a escolha certa para o teu caso, dizemos.</p></div>
-        <div class="step rv"><div class="num">02</div><h4>Construímos por partes</h4>
-          <p>Vais vendo o trabalho à medida que avança, em vez de esperares semanas por uma surpresa no fim. Mudar de ideias a meio sai sempre mais barato.</p></div>
-        <div class="step rv"><div class="num">03</div><h4>Publicamos e acompanhamos</h4>
-          <p>Tratamos do domínio, do alojamento e de pôr tudo no ar. Depois continuamos disponíveis para atualizações e correções.</p></div>
+        <div class="step rv"><div class="tagline">Briefing</div><div class="num">01</div><h4>Conversa inicial</h4>
+          <p>Ouvimos o objetivo, o prazo e o orçamento. Recebe uma proposta clara, sem compromisso e sem linguagem técnica desnecessária.</p></div>
+        <div class="step rv"><div class="tagline">Design</div><div class="num">02</div><h4>Proposta e estrutura</h4>
+          <p>Apresentamos como vai ficar e o que cada página faz. Só avançamos para o desenvolvimento depois de estar aprovado por si.</p></div>
+        <div class="step rv"><div class="tagline">Build</div><div class="num">03</div><h4>Desenvolvimento</h4>
+          <p>Construímos por partes e vai acompanhando à medida que avança. Ajustar a meio do caminho sai sempre mais barato do que no fim.</p></div>
+        <div class="step rv"><div class="tagline">Lançamento</div><div class="num">04</div><h4>Publicação e suporte</h4>
+          <p>Tratamos do domínio, do alojamento e dos testes finais. Depois de no ar, continuamos disponíveis para dúvidas e correções.</p></div>
       </div>
     </div>
   </section>
@@ -495,8 +586,8 @@ footer{border-top:1px solid var(--line);padding:44px 0 40px;overflow:hidden;}
   <section class="block" id="contacto">
     <div class="wrap">
       <div class="cta-band rv">
-        <h2>Tem um projeto em mente?</h2>
-        <p>Websites, apps ou só uma ideia por validar — respondemos a tudo em 24 horas.</p>
+        <h2>Quer melhorar a sua presença online?</h2>
+        <p>Peça um orçamento sem compromisso. Respondemos com uma proposta clara e um prazo realista.</p>
         <a class="btn mag" href="mailto:info@brotherscode.pro" id="mailBtn">info@brotherscode.pro</a>
         <span class="copy-hint" id="copyHint">Endereço copiado ✓</span>
       </div>
