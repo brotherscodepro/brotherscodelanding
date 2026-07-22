@@ -103,26 +103,28 @@ header.stuck{background:rgba(13,17,23,.8);backdrop-filter:blur(16px);border-bott
 .nav a.lnk:hover{color:var(--white);}
 .nav a.lnk:hover::after{width:100%;}
 @media(max-width:820px){.nav a.lnk{display:none;}}
-/* cabecalho em ecras pequenos: nada pode transbordar */
+/* cabecalho: a marca cede espaco, o botao nunca encolhe */
 .bar{min-width:0;}
-.mark{min-width:0;flex-shrink:1;}
+.mark{min-width:0;flex:0 1 auto;}
 .mark svg{flex:none;}
 .mark-txt{min-width:0;}
-@media(max-width:600px){
-  .bar{gap:10px;padding:12px 0;}
-  .mark{gap:8px;}
-  .mark svg{width:28px;height:31px;}
-  .mark-txt b{font-size:11.5px;letter-spacing:.08em;}
-  .mark-txt span{font-size:8px;letter-spacing:.14em;}
-  .btn{padding:10px 15px;font-size:13px;}
+.nav{flex:none;}
+.btn-short{display:none;}
+@media(max-width:620px){
+  .bar{gap:10px;padding:13px 0;}
+  .mark{gap:9px;}
+  .mark svg{width:29px;height:33px;}
+  .mark-txt b{font-size:12px;letter-spacing:.07em;}
+  .mark-txt span{font-size:8px;letter-spacing:.13em;}
+  .btn-full{display:none;}
+  .btn-short{display:inline;}
+  .btn{padding:11px 17px;font-size:13.5px;}
 }
-@media(max-width:400px){
-  .mark-txt b{font-size:10.5px;letter-spacing:.04em;}
-  .mark-txt span{display:none;}
-  .btn{padding:9px 13px;font-size:12.5px;}
+@media(max-width:360px){
+  .mark-txt b{font-size:11px;letter-spacing:.03em;}
+  .mark-txt span{font-size:7.5px;letter-spacing:.1em;}
 }
-
-.btn{position:relative;display:inline-block;font-size:14px;font-weight:500;text-decoration:none;
+.btn{position:relative;display:inline-block;flex:none;white-space:nowrap;font-size:14px;font-weight:500;text-decoration:none;
   padding:12px 24px;border-radius:10px;color:var(--white);background:var(--grad);overflow:hidden;
   box-shadow:0 8px 24px -10px rgba(124,58,237,.95);
   transition:transform .25s var(--e),box-shadow .3s var(--e);will-change:transform;}
@@ -395,7 +397,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 40px;overflow:hidden;}
       <a class="lnk" href="#servicos">Serviços</a>
       <a class="lnk" href="#projetos">Projetos</a>
       <a class="lnk" href="#processo">Como trabalhamos</a>
-      <a class="btn mag" href="#contacto">Pedir orçamento</a>
+      <a class="btn mag" href="#contacto"><span class="btn-full">Pedir orçamento</span><span class="btn-short">Orçamento</span></a>
     </nav>
   </div>
 </header>
@@ -412,7 +414,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 40px;overflow:hidden;}
         </h1>
         <p>Criamos websites, lojas online e aplicações à medida para empresas que querem uma presença online sólida — rápida, segura e simples de gerir no dia a dia.</p>
         <div class="hero-cta">
-          <a class="btn mag" href="#contacto">Pedir orçamento</a>
+          <a class="btn mag" href="#contacto"><span class="btn-full">Pedir orçamento</span><span class="btn-short">Orçamento</span></a>
           <a class="btn ghost mag" href="#projetos">Ver projetos</a>
         </div>
       </div>
