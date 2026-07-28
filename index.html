@@ -215,6 +215,38 @@ section.block{padding:clamp(64px,11vh,120px) 0;}
   font-size:9.5px;color:#7A8698;display:flex;align-items:center;padding:0 10px;}
 .browser img{display:block;width:100%;height:auto;}
 
+/* ============ cartoes porquê nós ============ */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:46px;}
+.bro{position:relative;border-radius:18px;padding:32px;overflow:hidden;isolation:isolate;
+  background:linear-gradient(var(--panel),var(--panel)) padding-box,
+             linear-gradient(140deg,rgba(229,231,235,.14),rgba(229,231,235,.04)) border-box;
+  border:1px solid transparent;transition:transform .35s var(--e);}
+.bro::after{content:"";position:absolute;inset:0;z-index:-1;border-radius:18px;
+  background:radial-gradient(320px circle at var(--mx,50%) var(--my,0%),rgba(37,99,235,.18),transparent 62%);
+  opacity:0;transition:opacity .35s;}
+.bro:hover{transform:translateY(-6px);}
+.bro:hover::after{opacity:1;}
+.bro .role{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.bro h4{font-weight:600;font-size:1.3rem;color:var(--white);margin:8px 0 0;letter-spacing:-.02em;}
+.bro p{color:var(--muted);font-size:15px;margin:12px 0 0;}
+@media(max-width:860px){.duo{grid-template-columns:1fr;}}
+
+/* ============ terminal ============ */
+.term{margin-top:26px;border-radius:14px;overflow:hidden;border:1px solid var(--line);
+  background:#0A0E14;box-shadow:0 30px 70px -30px rgba(0,0,0,.85);}
+.term .top{display:flex;align-items:center;gap:6px;padding:11px 14px;background:#12181F;border-bottom:1px solid var(--line);}
+.term .top i{width:10px;height:10px;border-radius:50%;}
+.term .top i:nth-child(1){background:#FF5F57;}
+.term .top i:nth-child(2){background:#FEBC2E;}
+.term .top i:nth-child(3){background:#28C840;}
+.term .top span{margin-left:8px;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);}
+.term pre{margin:0;padding:20px 22px;font-family:"JetBrains Mono",monospace;font-size:13px;line-height:1.75;
+  color:#C9D4E3;min-height:214px;white-space:pre-wrap;}
+.term .c-key{color:#7C9BFF;} .term .c-str{color:#7EE0A3;} .term .c-com{color:#5A6473;} .term .c-pun{color:#8E9BB0;}
+.term .caret{display:inline-block;width:8px;height:15px;background:var(--violet);vertical-align:-2px;animation:blink 1s steps(1) infinite;}
+@keyframes blink{50%{opacity:0;}}
+
 /* ============ servicos ============ */
 .svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px;}
 .svc{position:relative;border-radius:16px;padding:28px;isolation:isolate;
@@ -477,13 +509,13 @@ footer{border-top:1px solid var(--line);padding:44px 0 40px;overflow:hidden;}
         <div class="bro rv glow">
           <div class="role">Orçamentos</div>
           <h4>Valores definidos à partida</h4>
-          <p>Cada proposta indica o valor e o prazo antes do início do trabalho. Sem custos adicionais fora do que for acordado.</p>
+          <p>Cada proposta indica o valor e o prazo antes do início do trabalho. Se houver alterações durante o projeto, o impacto no custo é comunicado antes de avançar.</p>
 
         </div>
         <div class="bro rv glow">
           <div class="role">Tecnologia</div>
           <h4>Soluções que perduram</h4>
-          <p>Utilizamos tecnologias estáveis e amplamente adotadas, para garantir um site rápido, seguro e fácil de manter a longo prazo.</p>
+          <p>Utilizamos tecnologias estáveis e amplamente adotadas, para garantir projetos rápidos, seguros e fáceis de manter a longo prazo.</p>
 
         </div>
       </div>
