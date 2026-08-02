@@ -24,25 +24,11 @@
 <style>
   :root{--accent:#16A34A;--accent-soft:rgba(22,163,74,.20);}
   /* mockup do telemovel */
-  .phone{position:relative;width:262px;height:530px;border-radius:38px;background:#05070A;
+  .phone{position:relative;width:250px;height:498px;border-radius:36px;background:#05070A;
     border:8px solid #1B2331;box-shadow:0 40px 80px -30px rgba(0,0,0,.9),0 0 0 1px rgba(229,231,235,.06);
-    overflow:hidden;}
-  .phone .notch{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:78px;height:21px;
-    background:#0B0E13;border-radius:99px;z-index:3;}
-  .sv{padding:46px 17px 16px;font-size:11px;color:#DDF3E6;height:100%;
-    background:linear-gradient(180deg,#04120C,#05070A 60%);}
-  .sv .lbl{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#5E8A73;}
-  .sv .bal{font-weight:700;font-size:28px;color:#fff;letter-spacing:-.02em;margin-top:3px;}
-  .sv .pill{display:inline-block;font-size:9px;padding:3px 8px;border-radius:99px;
-    background:rgba(22,163,74,.18);color:#4ADE80;margin-top:7px;}
-  .sv .bars{display:flex;align-items:flex-end;gap:6px;height:80px;margin:20px 0 4px;}
-  .sv .bars i{flex:1;border-radius:3px 3px 0 0;background:linear-gradient(180deg,#22C55E,#15803D);}
-  .sv .row{display:flex;justify-content:space-between;padding:9px 0;border-top:1px solid rgba(255,255,255,.06);}
-  .sv .row em{font-style:normal;color:#9BB5A6;font-size:10px;}
-  .sv .row b{font-weight:500;font-size:11px;color:#fff;}
-  .sv .nav{display:flex;justify-content:space-between;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.07);}
-  .sv .nav i{width:27px;height:4px;border-radius:99px;background:rgba(255,255,255,.14);}
-  .sv .nav i:first-child{background:#22C55E;}
+    overflow:hidden;transform:rotate(-4deg);transition:transform .6s cubic-bezier(.16,.84,.28,1);}
+  .proj-hero:hover .phone{transform:rotate(0) translateY(-8px);}
+  .phone img,.phone video{display:block;width:100%;height:auto;}
 </style>
 </head>
 <body>
@@ -83,22 +69,8 @@
         </div>
       </div>
       <div class="stage">
-        <div class="phone">
-          <div class="notch"></div>
-          <div class="sv">
-            <div class="lbl">Saldo do mês</div>
-            <div class="bal">1.284,50 €</div>
-            <div class="pill">▲ 12% face a junho</div>
-            <div class="bars">
-              <i style="height:100%"></i><i style="height:64%"></i><i style="height:82%"></i>
-              <i style="height:45%"></i><i style="height:93%"></i><i style="height:58%"></i><i style="height:74%"></i>
-            </div>
-            <div class="row"><em>Supermercado</em><b>-64,20 €</b></div>
-            <div class="row"><em>Combustível</em><b>-52,00 €</b></div>
-            <div class="row"><em>Renda</em><b>-480,00 €</b></div>
-            <div class="row"><em>Simulação IRS</em><b>+312,80 €</b></div>
-            <div class="nav"><i></i><i></i><i></i><i></i></div>
-          </div>
+        <div class="phone proj-hero">
+            <video src="/assets/saldo-verde-demo.mp4" autoplay loop muted playsinline preload="auto" width="360" height="728" aria-label="Demonstração do Saldo Verde"></video>
         </div>
       </div>
     </div>
@@ -154,11 +126,11 @@
         <div class="eyebrow">Estado</div>
         <h2>Onde vai e o que se segue</h2>
         <div class="timeline">
-          <div class="tl done"><b>Registo de despesas e resumo mensal</b><span>Disponível</span></div>
-          <div class="tl done"><b>Simulador de IRS</b><span>Disponível</span></div>
-          <div class="tl done"><b>Versão Android</b><span>Disponível</span></div>
-          <div class="tl"><b>Objetivos de poupança</b><span>Em desenvolvimento</span></div>
-          <div class="tl"><b>Partilha de contas entre duas pessoas</b><span>Planeado</span></div>
+          <div class="tl done"><b>Registo de despesas e resumo mensal</b><span>Concluído</span></div>
+          <div class="tl done"><b>Simulador de IRS</b><span>Concluído</span></div>
+          <div class="tl done"><b>Versão Android</b><span>Concluído</span></div>
+          <div class="tl done"><b>Interface e funcionalidades completas</b><span>Concluído</span></div>
+          <div class="tl"><b>Publicação na Google Play Store</b><span>Próximo passo</span></div>
         </div>
       </div>
     </div>
@@ -168,7 +140,7 @@
     <div class="wrap">
       <div class="endcta rv">
         <h2>Experimenta o Saldo Verde</h2>
-        <p>Gratuito, em português e sem ligar a conta bancária.</p>
+        <p>Gratuito, em português e em breve disponível na Google Play Store.</p>
         <a class="btn solid" href="https://saldoverde.pt" target="_blank" rel="noopener">Ir para saldoverde.pt</a>
       </div>
       <div class="sisters">
