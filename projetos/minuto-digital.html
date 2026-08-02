@@ -24,25 +24,14 @@
 <style>
   :root{--accent:#E3000F;--accent-soft:rgba(227,0,15,.18);}
   .browser{width:min(100%,440px);border-radius:14px;overflow:hidden;background:#0B0E13;
-    border:1px solid rgba(229,231,235,.10);box-shadow:0 40px 80px -34px rgba(0,0,0,.9);}
+    border:1px solid rgba(229,231,235,.10);box-shadow:0 40px 80px -34px rgba(0,0,0,.9);
+    transform:rotate(3deg);transition:transform .6s cubic-bezier(.16,.84,.28,1);}
+  .browser:hover{transform:rotate(0) translateY(-8px);}
   .browser .top{display:flex;align-items:center;gap:6px;padding:10px 13px;background:#151B25;}
   .browser .top i{width:9px;height:9px;border-radius:50%;background:#2C3746;}
   .browser .url{flex:1;margin-left:8px;height:18px;border-radius:99px;background:#0D1117;
     font-size:9.5px;color:#7A8698;display:flex;align-items:center;padding:0 10px;}
-  .md{padding:15px;}
-  .md .brand{font-weight:700;font-size:14px;color:#fff;letter-spacing:-.02em;}
-  .md .brand em{font-style:normal;color:#E3000F;}
-  .md .lead{margin:11px 0 0;height:96px;border-radius:8px;position:relative;overflow:hidden;
-    background:linear-gradient(120deg,#2A0A0E,#151B25);}
-  .md .lead::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:36px;
-    background:linear-gradient(transparent,rgba(0,0,0,.78));}
-  .md .lead span{position:absolute;left:11px;bottom:9px;font-size:10.5px;color:#fff;font-weight:500;z-index:2;}
-  .md .tagline{position:absolute;top:10px;left:11px;z-index:2;font-size:8px;letter-spacing:.1em;
-    text-transform:uppercase;background:#E3000F;color:#fff;padding:2px 7px;border-radius:3px;}
-  .md .art{display:flex;gap:10px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.06);}
-  .md .art .th{width:46px;height:36px;border-radius:5px;background:#1B2331;flex:none;}
-  .md .art .tx b{display:block;height:6px;width:126px;border-radius:3px;background:rgba(255,255,255,.30);}
-  .md .art .tx i{display:block;height:5px;width:84px;border-radius:3px;background:rgba(255,255,255,.13);margin-top:6px;}
+  .browser img{display:block;width:100%;height:auto;}
 </style>
 </head>
 <body>
@@ -85,16 +74,7 @@
       <div class="stage">
         <div class="browser">
           <div class="top"><i></i><i></i><i></i><div class="url">minutodigital.pt</div></div>
-          <div class="md">
-            <div class="brand">MINUTO <em>DIGITAL</em></div>
-            <div class="lead">
-              <div class="tagline">Análise</div>
-              <span>O que muda nos telemóveis este ano</span>
-            </div>
-            <div class="art"><div class="th"></div><div class="tx"><b></b><i></i></div></div>
-            <div class="art"><div class="th"></div><div class="tx"><b></b><i></i></div></div>
-            <div class="art"><div class="th"></div><div class="tx"><b></b><i></i></div></div>
-          </div>
+          <img src="/assets/minuto-digital.png" alt="Página inicial do Minuto Digital" width="800" height="744" loading="eager">
         </div>
       </div>
     </div>
