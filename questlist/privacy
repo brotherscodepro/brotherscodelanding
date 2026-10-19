@@ -1,0 +1,723 @@
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Questlist Privacy Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Layout concept: a single scroll "scroll of parchment" laid over the app's own dark
+     RPG interface — a sticky quest-log header, numbered chapters like quest steps, each
+     in a card styled exactly like the app's own BackgroundCard component. */
+  :root {
+    --bg: #05070F;
+    --bg-secondary: #0D1117;
+    --card: #161B27;
+    --border: #262D3D;
+    --primary: #8B5CF6;
+    --primary-light: #A78BFA;
+    --text: #F5F5F7;
+    --text-secondary: #B4B8C5;
+    --text-muted: #6B7280;
+    --font-display: 'Cinzel', Georgia, 'Times New Roman', serif;
+    --font-body: 'Manrope', -apple-system, 'Segoe UI', sans-serif;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-bottom: 48px;
+    line-height: 1.6;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0 0 auto;
+    height: env(safe-area-inset-top, 0px);
+    z-index: 10;
+    background: var(--bg-secondary);
+  }
+
+  a { color: var(--primary-light); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--primary-light); outline-offset: 2px; }
+
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  header.top {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 5;
+    background: linear-gradient(to bottom, var(--bg) 80%, transparent);
+    padding-top: 16px;
+    padding-bottom: 10px;
+    margin: 0 -16px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .crumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    min-width: 0;
+  }
+
+  .crumb .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--primary);
+    box-shadow: 0 0 8px var(--primary);
+    flex-shrink: 0;
+  }
+
+  .lang-switch {
+    flex-shrink: 0;
+    display: flex;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    gap: 2px;
+  }
+
+  .lang-switch button {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 11.5px;
+    letter-spacing: .04em;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    padding: 5px 11px;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+
+  .lang-switch button.active {
+    background: var(--primary);
+    color: #0B0414;
+  }
+
+  .hero {
+    padding: 28px 0 24px;
+  }
+
+  .hero .emblem {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--primary), #5B21B6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin-bottom: 18px;
+    box-shadow: 0 0 0 1px var(--border), 0 8px 24px -8px rgba(139, 92, 246, .55);
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(28px, 6vw, 38px);
+    line-height: 1.15;
+    letter-spacing: .01em;
+    margin: 0 0 10px;
+    text-wrap: balance;
+  }
+
+  .hero p.sub {
+    color: var(--text-secondary);
+    font-size: 15.5px;
+    max-width: 50ch;
+    margin: 0 0 16px;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 5px 12px;
+  }
+
+  nav.toc {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px 18px 8px;
+    margin-bottom: 28px;
+  }
+
+  nav.toc .toc-label {
+    font-family: var(--font-display);
+    font-size: 12px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--primary-light);
+    margin: 0 0 10px;
+  }
+
+  nav.toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2px;
+    padding-bottom: 10px;
+  }
+
+  @media (min-width: 560px) {
+    nav.toc ol { grid-template-columns: 1fr 1fr; }
+  }
+
+  nav.toc a {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    color: var(--text-secondary);
+    font-size: 13.5px;
+    padding: 7px 4px;
+    border-radius: 8px;
+  }
+
+  nav.toc a:hover { color: var(--text); text-decoration: none; background: rgba(139,92,246,.1); }
+
+  nav.toc a .n {
+    font-family: var(--font-body);
+    font-weight: 700;
+    color: var(--primary-light);
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    width: 1.4em;
+    flex-shrink: 0;
+  }
+
+  section.chapter {
+    border: 1px solid var(--border);
+    background: var(--card);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+    scroll-margin-top: 72px;
+  }
+
+  section.chapter .chapter-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  section.chapter .badge {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: rgba(139, 92, 246, .14);
+    border: 1px solid rgba(139, 92, 246, .3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  section.chapter h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 19px;
+    margin: 0;
+    letter-spacing: .01em;
+  }
+
+  section.chapter .chapter-head .idx {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-left: auto;
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+  }
+
+  section.chapter p, section.chapter li {
+    color: var(--text-secondary);
+    font-size: 14.5px;
+    margin: 0 0 10px;
+  }
+
+  section.chapter p:last-child, section.chapter ul:last-child { margin-bottom: 0; }
+
+  section.chapter strong { color: var(--text); font-weight: 600; }
+
+  section.chapter ul {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 12px 0;
+  }
+
+  section.chapter ul li {
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  section.chapter ul li::before {
+    content: "";
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--primary);
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  .callout {
+    display: flex;
+    gap: 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-top: 12px;
+    font-size: 13.5px;
+    color: var(--text-secondary);
+  }
+
+  .callout .ic { flex-shrink: 0; }
+
+  .contact-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 14px;
+  }
+
+  .contact-row .label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--text-muted);
+    margin-bottom: 2px;
+  }
+
+  .contact-row .value {
+    color: var(--text);
+    font-size: 14.5px;
+    font-weight: 600;
+    word-break: break-all;
+  }
+
+  .copy-btn {
+    flex-shrink: 0;
+    background: rgba(139,92,246,.14);
+    border: 1px solid rgba(139,92,246,.3);
+    color: var(--primary-light);
+    font-family: var(--font-body);
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 7px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .copy-btn:hover { background: rgba(139,92,246,.24); }
+  .copy-btn.copied { background: rgba(34,197,94,.18); border-color: rgba(34,197,94,.4); color: #4ADE80; }
+
+  footer.end {
+    text-align: center;
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 12.5px;
+  }
+
+  footer.end .brand {
+    font-family: var(--font-display);
+    color: var(--text-secondary);
+    letter-spacing: .04em;
+    margin-bottom: 4px;
+  }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="crumb"><span class="dot"></span><span data-i18n="crumb">Questlist · Legal</span></div>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-set-lang="en" id="btn-en">EN</button>
+      <button type="button" data-set-lang="pt" id="btn-pt">PT</button>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="emblem">🛡️</div>
+    <h1 data-i18n="title">Privacy Policy</h1>
+    <p class="sub" data-i18n="subtitle">How Questlist handles information when you turn your to-do list into a quest log.</p>
+    <div class="meta-row">
+      <span class="pill" data-i18n="pill_updated">📅 Last updated October 19, 2026</span>
+      <span class="pill" data-i18n="pill_account">🧭 No account required</span>
+      <span class="pill" data-i18n="pill_local">📦 Data stays on your device</span>
+    </div>
+  </div>
+
+  <nav class="toc" aria-label="Table of contents">
+    <p class="toc-label" data-i18n="toc_label">Chapters</p>
+    <ol>
+      <li><a href="#intro"><span class="n">01</span><span data-i18n="toc_1">Introduction</span></a></li>
+      <li><a href="#data"><span class="n">02</span><span data-i18n="toc_2">Information We Collect</span></a></li>
+      <li><a href="#ads"><span class="n">03</span><span data-i18n="toc_3">Advertising</span></a></li>
+      <li><a href="#notif"><span class="n">04</span><span data-i18n="toc_4">Notifications</span></a></li>
+      <li><a href="#storage"><span class="n">05</span><span data-i18n="toc_5">Data Storage &amp; Security</span></a></li>
+      <li><a href="#children"><span class="n">06</span><span data-i18n="toc_6">Children's Privacy</span></a></li>
+      <li><a href="#rights"><span class="n">07</span><span data-i18n="toc_7">Your Rights</span></a></li>
+      <li><a href="#changes"><span class="n">08</span><span data-i18n="toc_8">Changes to This Policy</span></a></li>
+      <li><a href="#contact"><span class="n">09</span><span data-i18n="toc_9">Contact</span></a></li>
+    </ol>
+  </nav>
+
+  <section class="chapter" id="intro">
+    <div class="chapter-head">
+      <div class="badge">📜</div>
+      <h2 data-i18n="h_1">Introduction</h2>
+      <span class="idx" data-i18n="idx_1">Ch. 01</span>
+    </div>
+    <div data-i18n="body_1">
+      <p>Questlist is a task and habit app made by <strong>Brothers Code</strong> that turns your to-dos, shopping lists and goals into missions, quests and rewards. This policy explains what information the app touches, why, and what control you have over it.</p>
+      <p>By using Questlist, you agree to the practices described here. If anything is unclear, you can reach us using the contact details in Chapter 09.</p>
+    </div>
+  </section>
+
+  <section class="chapter" id="data">
+    <div class="chapter-head">
+      <div class="badge">🗂️</div>
+      <h2 data-i18n="h_2">Information We Collect</h2>
+      <span class="idx" data-i18n="idx_2">Ch. 02</span>
+    </div>
+    <div data-i18n="body_2">
+      <p>Questlist does not require an account, a sign-up, or a name. Everything you create &mdash; quests, missions, notes, your level, coins and streaks &mdash; is stored only in a local database on your own device.</p>
+      <ul>
+        <li><strong>Content you create:</strong> task titles, notes, checklist items, deadlines and priorities. This never leaves your device and is not sent to Brothers Code or any server we run.</li>
+        <li><strong>Progress data:</strong> your level, XP, coins, streaks, unlocked skins and themes. Also stored locally only.</li>
+        <li><strong>Advertising data:</strong> if you see ads in the app, our ad partner (Google AdMob) may collect device identifiers and usage data to show and measure ads. This is covered in Chapter 03.</li>
+      </ul>
+      <div class="callout"><span class="ic">💡</span><span>Short version: your quest log is yours. We don't have a copy of it.</span></div>
+    </div>
+  </section>
+
+  <section class="chapter" id="ads">
+    <div class="chapter-head">
+      <div class="badge">📣</div>
+      <h2 data-i18n="h_3">Advertising</h2>
+      <span class="idx" data-i18n="idx_3">Ch. 03</span>
+    </div>
+    <div data-i18n="body_3">
+      <p>Questlist shows ads through <strong>Google AdMob</strong> to keep the app free. AdMob and its partners may collect and use data (such as advertising identifiers and general usage information) to serve and measure ads, as described in <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
+      <p>On your first launch, Questlist shows a consent form through Google's <strong>User Messaging Platform (UMP)</strong>, following the EU/UK consent framework. You choose there whether to allow personalized ads, and you can change that choice at any time from within the app.</p>
+    </div>
+  </section>
+
+  <section class="chapter" id="notif">
+    <div class="chapter-head">
+      <div class="badge">🔔</div>
+      <h2 data-i18n="h_4">Notifications</h2>
+      <span class="idx" data-i18n="idx_4">Ch. 04</span>
+    </div>
+    <div data-i18n="body_4">
+      <p>If enabled, Questlist can send a local reminder when your daily streak is about to reset. This notification is scheduled and generated entirely on your device &mdash; no notification data is sent to or processed by any external server.</p>
+      <p>You can turn streak reminders on or off at any time from <strong>Profile &rarr; Settings</strong>.</p>
+    </div>
+  </section>
+
+  <section class="chapter" id="storage">
+    <div class="chapter-head">
+      <div class="badge">🔒</div>
+      <h2 data-i18n="h_5">Data Storage &amp; Security</h2>
+      <span class="idx" data-i18n="idx_5">Ch. 05</span>
+    </div>
+    <div data-i18n="body_5">
+      <p>All of your quests, missions, notes and progress are stored locally on your device using Android's Room database. Brothers Code does not operate a backend or cloud service for Questlist, and we do not back up, sync or have access to your data.</p>
+      <p>Because there's no account or server-side copy, uninstalling the app or clearing its storage permanently deletes your data &mdash; there is nothing on our side to remove.</p>
+    </div>
+  </section>
+
+  <section class="chapter" id="children">
+    <div class="chapter-head">
+      <div class="badge">🧒</div>
+      <h2 data-i18n="h_6">Children's Privacy</h2>
+      <span class="idx" data-i18n="idx_6">Ch. 06</span>
+    </div>
+    <div data-i18n="body_6">
+      <p>Questlist is not directed at children under 13, and we do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us using the details in Chapter 09 and we will take appropriate steps.</p>
+    </div>
+  </section>
+
+  <section class="chapter" id="rights">
+    <div class="chapter-head">
+      <div class="badge">⚖️</div>
+      <h2 data-i18n="h_7">Your Rights</h2>
+      <span class="idx" data-i18n="idx_7">Ch. 07</span>
+    </div>
+    <div data-i18n="body_7">
+      <p>Since Questlist stores your content locally and doesn't tie it to an identity, most data-protection rights (such as those under the GDPR) are already in your hands:</p>
+      <ul>
+        <li><strong>Access &amp; portability:</strong> your data is on your device at all times &mdash; there is nothing held elsewhere to request.</li>
+        <li><strong>Deletion:</strong> uninstalling the app, or clearing its storage from Android settings, erases all of your in-app data immediately.</li>
+        <li><strong>Advertising choices:</strong> you can review or withdraw ad-personalization consent at any time from within the app's consent settings.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="chapter" id="changes">
+    <div class="chapter-head">
+      <div class="badge">🔄</div>
+      <h2 data-i18n="h_8">Changes to This Policy</h2>
+      <span class="idx" data-i18n="idx_8">Ch. 08</span>
+    </div>
+    <div data-i18n="body_8">
+      <p>We may update this policy as Questlist evolves. Changes will be posted on this page with a new "last updated" date. We encourage you to review it periodically.</p>
+    </div>
+  </section>
+
+  <section class="chapter" id="contact">
+    <div class="chapter-head">
+      <div class="badge">✉️</div>
+      <h2 data-i18n="h_9">Contact</h2>
+      <span class="idx" data-i18n="idx_9">Ch. 09</span>
+    </div>
+    <p data-i18n="contact_intro">Questions about this policy or how Questlist handles information can be sent here:</p>
+    <div class="contact-card">
+      <div class="contact-row">
+        <div>
+          <div class="label" data-i18n="label_dev">Developer</div>
+          <div class="value">Brothers Code</div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div>
+          <div class="label" data-i18n="label_email">Email</div>
+          <div class="value" id="email-value">geral@brotherscode.pro</div>
+        </div>
+        <button class="copy-btn" id="copy-email" type="button" data-i18n="copy_btn">Copy</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="end">
+    <div class="brand">Questlist</div>
+    <div data-i18n="footer_built">Built by Brothers Code</div>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var DICT = {
+      en: {
+        crumb: "Questlist · Legal",
+        title: "Privacy Policy",
+        subtitle: "How Questlist handles information when you turn your to-do list into a quest log.",
+        pill_updated: "📅 Last updated October 19, 2026",
+        pill_account: "🧭 No account required",
+        pill_local: "📦 Data stays on your device",
+        toc_label: "Chapters",
+        toc_1: "Introduction",
+        toc_2: "Information We Collect",
+        toc_3: "Advertising",
+        toc_4: "Notifications",
+        toc_5: "Data Storage & Security",
+        toc_6: "Children's Privacy",
+        toc_7: "Your Rights",
+        toc_8: "Changes to This Policy",
+        toc_9: "Contact",
+        h_1: "Introduction",
+        idx_1: "Ch. 01",
+        body_1: "<p>Questlist is a task and habit app made by <strong>Brothers Code</strong> that turns your to-dos, shopping lists and goals into missions, quests and rewards. This policy explains what information the app touches, why, and what control you have over it.</p><p>By using Questlist, you agree to the practices described here. If anything is unclear, you can reach us using the contact details in Chapter 09.</p>",
+        h_2: "Information We Collect",
+        idx_2: "Ch. 02",
+        body_2: "<p>Questlist does not require an account, a sign-up, or a name. Everything you create &mdash; quests, missions, notes, your level, coins and streaks &mdash; is stored only in a local database on your own device.</p><ul><li><strong>Content you create:</strong> task titles, notes, checklist items, deadlines and priorities. This never leaves your device and is not sent to Brothers Code or any server we run.</li><li><strong>Progress data:</strong> your level, XP, coins, streaks, unlocked skins and themes. Also stored locally only.</li><li><strong>Advertising data:</strong> if you see ads in the app, our ad partner (Google AdMob) may collect device identifiers and usage data to show and measure ads. This is covered in Chapter 03.</li></ul><div class=\"callout\"><span class=\"ic\">💡</span><span>Short version: your quest log is yours. We don't have a copy of it.</span></div>",
+        h_3: "Advertising",
+        idx_3: "Ch. 03",
+        body_3: "<p>Questlist shows ads through <strong>Google AdMob</strong> to keep the app free. AdMob and its partners may collect and use data (such as advertising identifiers and general usage information) to serve and measure ads, as described in <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Google's Privacy Policy</a>.</p><p>On your first launch, Questlist shows a consent form through Google's <strong>User Messaging Platform (UMP)</strong>, following the EU/UK consent framework. You choose there whether to allow personalized ads, and you can change that choice at any time from within the app.</p>",
+        h_4: "Notifications",
+        idx_4: "Ch. 04",
+        body_4: "<p>If enabled, Questlist can send a local reminder when your daily streak is about to reset. This notification is scheduled and generated entirely on your device &mdash; no notification data is sent to or processed by any external server.</p><p>You can turn streak reminders on or off at any time from <strong>Profile &rarr; Settings</strong>.</p>",
+        h_5: "Data Storage & Security",
+        idx_5: "Ch. 05",
+        body_5: "<p>All of your quests, missions, notes and progress are stored locally on your device using Android's Room database. Brothers Code does not operate a backend or cloud service for Questlist, and we do not back up, sync or have access to your data.</p><p>Because there's no account or server-side copy, uninstalling the app or clearing its storage permanently deletes your data &mdash; there is nothing on our side to remove.</p>",
+        h_6: "Children's Privacy",
+        idx_6: "Ch. 06",
+        body_6: "<p>Questlist is not directed at children under 13, and we do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us using the details in Chapter 09 and we will take appropriate steps.</p>",
+        h_7: "Your Rights",
+        idx_7: "Ch. 07",
+        body_7: "<p>Since Questlist stores your content locally and doesn't tie it to an identity, most data-protection rights (such as those under the GDPR) are already in your hands:</p><ul><li><strong>Access &amp; portability:</strong> your data is on your device at all times &mdash; there is nothing held elsewhere to request.</li><li><strong>Deletion:</strong> uninstalling the app, or clearing its storage from Android settings, erases all of your in-app data immediately.</li><li><strong>Advertising choices:</strong> you can review or withdraw ad-personalization consent at any time from within the app's consent settings.</li></ul>",
+        h_8: "Changes to This Policy",
+        idx_8: "Ch. 08",
+        body_8: "<p>We may update this policy as Questlist evolves. Changes will be posted on this page with a new \"last updated\" date. We encourage you to review it periodically.</p>",
+        h_9: "Contact",
+        idx_9: "Ch. 09",
+        contact_intro: "Questions about this policy or how Questlist handles information can be sent here:",
+        label_dev: "Developer",
+        label_email: "Email",
+        copy_btn: "Copy",
+        copy_done: "Copied",
+        footer_built: "Built by Brothers Code"
+      },
+      pt: {
+        crumb: "Questlist · Jurídico",
+        title: "Política de Privacidade",
+        subtitle: "Como o Questlist trata a informação quando transformas a tua lista de tarefas num diário de missões.",
+        pill_updated: "📅 Atualizado a 19 de outubro de 2026",
+        pill_account: "🧭 Sem conta necessária",
+        pill_local: "📦 Os dados ficam no teu dispositivo",
+        toc_label: "Capítulos",
+        toc_1: "Introdução",
+        toc_2: "Informação que Recolhemos",
+        toc_3: "Publicidade",
+        toc_4: "Notificações",
+        toc_5: "Armazenamento e Segurança",
+        toc_6: "Privacidade de Crianças",
+        toc_7: "Os Teus Direitos",
+        toc_8: "Alterações a Esta Política",
+        toc_9: "Contacto",
+        h_1: "Introdução",
+        idx_1: "Cap. 01",
+        body_1: "<p>O Questlist é uma app de tarefas e hábitos feita pela <strong>Brothers Code</strong> que transforma as tuas tarefas, listas de compras e objetivos em missões, quests e recompensas. Esta política explica que informação a app toca, porquê, e que controlo tens sobre ela.</p><p>Ao usar o Questlist, aceitas as práticas aqui descritas. Se algo não estiver claro, podes contactar-nos através dos dados no Capítulo 09.</p>",
+        h_2: "Informação que Recolhemos",
+        idx_2: "Cap. 02",
+        body_2: "<p>O Questlist não exige conta, registo, nem nome. Tudo o que crias &mdash; quests, missões, notas, o teu nível, moedas e streaks &mdash; é guardado apenas numa base de dados local no teu próprio dispositivo.</p><ul><li><strong>Conteúdo que crias:</strong> títulos de tarefas, notas, itens de checklist, prazos e prioridades. Isto nunca saí do teu dispositivo nem é enviado para a Brothers Code ou qualquer servidor nosso.</li><li><strong>Dados de progresso:</strong> o teu nível, XP, moedas, streaks, skins e temas desbloqueados. Também guardado apenas localmente.</li><li><strong>Dados de publicidade:</strong> se vires anúncios na app, o nosso parceiro de publicidade (Google AdMob) pode recolher identificadores do dispositivo e dados de utilização para mostrar e medir anúncios. Isto é explicado no Capítulo 03.</li></ul><div class=\"callout\"><span class=\"ic\">💡</span><span>Resumo: o teu diário de missões é teu. Não temos uma cópia dele.</span></div>",
+        h_3: "Publicidade",
+        idx_3: "Cap. 03",
+        body_3: "<p>O Questlist mostra anúncios através do <strong>Google AdMob</strong> para manter a app gratuita. O AdMob e os seus parceiros podem recolher e usar dados (como identificadores publicitários e informação geral de utilização) para mostrar e medir anúncios, conforme descrito na <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Política de Privacidade da Google</a>.</p><p>No primeiro arranque, o Questlist mostra um formulário de consentimento através da <strong>User Messaging Platform (UMP)</strong> da Google, seguindo o enquadramento de consentimento da UE/Reino Unido. Aí escolhes se permites anúncios personalizados, e podes alterar essa escolha em qualquer momento dentro da app.</p>",
+        h_4: "Notificações",
+        idx_4: "Cap. 04",
+        body_4: "<p>Se ativado, o Questlist pode enviar um aviso local quando a tua streak diária está perto de se perder. Esta notificação é agendada e gerada inteiramente no teu dispositivo &mdash; nenhum dado de notificação é enviado para ou processado por qualquer servidor externo.</p><p>Podes ativar ou desativar os avisos de streak em qualquer momento em <strong>Perfil &rarr; Definições</strong>.</p>",
+        h_5: "Armazenamento e Segurança",
+        idx_5: "Cap. 05",
+        body_5: "<p>Todas as tuas quests, missões, notas e progresso são guardados localmente no teu dispositivo usando a base de dados Room do Android. A Brothers Code não opera nenhum backend ou serviço na nuvem para o Questlist, e não fazemos backup, sincronização nem temos acesso aos teus dados.</p><p>Como não há conta nem cópia num servidor, desinstalar a app ou limpar o seu armazenamento apaga permanentemente os teus dados &mdash; não há nada do nosso lado para remover.</p>",
+        h_6: "Privacidade de Crianças",
+        idx_6: "Cap. 06",
+        body_6: "<p>O Questlist não é dirigido a crianças com menos de 13 anos, e não recolhemos intencionalmente informação pessoal de crianças. Se acreditas que uma criança nos forneceu informação pessoal, contacta-nos através dos dados no Capítulo 09 e tomaremos as medidas adequadas.</p>",
+        h_7: "Os Teus Direitos",
+        idx_7: "Cap. 07",
+        body_7: "<p>Como o Questlist guarda o teu conteúdo localmente e não o associa a uma identidade, a maioria dos direitos de proteção de dados (como os do RGPD) já estão nas tuas mãos:</p><ul><li><strong>Acesso e portabilidade:</strong> os teus dados estão sempre no teu dispositivo &mdash; não há nada guardado noutro lado para pedir.</li><li><strong>Eliminação:</strong> desinstalar a app, ou limpar o seu armazenamento nas definições do Android, apaga imediatamente todos os teus dados na app.</li><li><strong>Escolhas de publicidade:</strong> podes rever ou retirar o consentimento de personalização de anúncios em qualquer momento nas definições de consentimento da app.</li></ul>",
+        h_8: "Alterações a Esta Política",
+        idx_8: "Cap. 08",
+        body_8: "<p>Podemos atualizar esta política à medida que o Questlist evolui. As alterações serão publicadas nesta página com uma nova data de \"última atualização\". Recomendamos que a revejas periodicamente.</p>",
+        h_9: "Contacto",
+        idx_9: "Cap. 09",
+        contact_intro: "Perguntas sobre esta política ou sobre como o Questlist trata a informação podem ser enviadas para aqui:",
+        label_dev: "Desenvolvedor",
+        label_email: "Email",
+        copy_btn: "Copiar",
+        copy_done: "Copiado",
+        footer_built: "Criado pela Brothers Code"
+      }
+    };
+
+    var STORAGE_KEY = "questlist_privacy_lang";
+    var btnEn = document.getElementById('btn-en');
+    var btnPt = document.getElementById('btn-pt');
+    var copyBtn = document.getElementById('copy-email');
+    var nodes = document.querySelectorAll('[data-i18n]');
+
+    function getSavedLang() {
+      try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
+    }
+    function saveLang(lang) {
+      try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+    }
+
+    function applyLang(lang) {
+      var dict = DICT[lang] || DICT.en;
+      nodes.forEach(function (el) {
+        var key = el.getAttribute('data-i18n');
+        if (dict[key] === undefined) return;
+        if (key.indexOf('body_') === 0) {
+          el.innerHTML = dict[key];
+        } else {
+          el.textContent = dict[key];
+        }
+      });
+      if (btnEn && btnPt) {
+        btnEn.classList.toggle('active', lang === 'en');
+        btnPt.classList.toggle('active', lang === 'pt');
+      }
+      document.documentElement.setAttribute('lang', lang);
+      saveLang(lang);
+    }
+
+    if (btnEn) btnEn.addEventListener('click', function () { applyLang('en'); });
+    if (btnPt) btnPt.addEventListener('click', function () { applyLang('pt'); });
+
+    var initial = getSavedLang() || 'en';
+    applyLang(initial);
+
+    if (copyBtn) {
+      var val = document.getElementById('email-value');
+      copyBtn.addEventListener('click', function () {
+        var text = val.textContent.trim();
+        var lang = document.documentElement.getAttribute('lang') || 'en';
+        var dict = DICT[lang] || DICT.en;
+        function done() {
+          copyBtn.textContent = dict.copy_done;
+          copyBtn.classList.add('copied');
+          setTimeout(function () {
+            copyBtn.textContent = dict.copy_btn;
+            copyBtn.classList.remove('copied');
+          }, 1600);
+        }
+        function fallbackSelect() {
+          var range = document.createRange();
+          range.selectNodeContents(val);
+          var sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done).catch(fallbackSelect);
+        } else {
+          fallbackSelect();
+        }
+      });
+    }
+  })();
+</script>
