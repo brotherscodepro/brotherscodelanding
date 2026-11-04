@@ -62,15 +62,17 @@
   <!-- ===================== ENGLISH ===================== -->
   <div data-lang="en">
     <h1>Privacy Policy</h1>
-    <p class="date">Last updated: 8 October 2026</p>
+    <p class="date">Last updated: 4 November 2026</p>
 
     <section class="card summary">
       <h2>In short</h2>
       <ul>
         <li>You don’t create an account. We never ask for your email, phone number, real name or location.</li>
         <li>Your progress is saved on your phone and backed up on our server, linked to a random code, so you can move it to a new phone.</li>
-        <li>If you join the ranking, the nickname you choose and your best scores are shown to other players.</li>
+        <li>Every player appears in the ranking and the weekly tournament with a random nickname (like “Opal 4821”), their country flag and their scores. You can change the nickname at any time.</li>
         <li>The game shows ads from Google AdMob. In the EU/UK you are asked for consent before personalised ads are shown.</li>
+        <li>With your consent, we use Firebase Analytics to see how the game is played. Crash reports (Sentry) help us fix bugs.</li>
+        <li>Daily reminders are created on your phone. Nothing is sent to us for them.</li>
         <li>We don’t sell your data.</li>
       </ul>
     </section>
@@ -89,17 +91,22 @@
         <tr><td><strong>Game progress</strong>: levels, coins, skins, best scores, game statistics, achievements, game settings (sound, language)</td><td>To run the game and remember where you are</td><td>On your phone</td></tr>
         <tr><td><strong>Random player ID, a secret key and a transfer code</strong> (e.g. GEM-ABCD-1234), created automatically</td><td>To back up your progress and let you restore it on another phone</td><td>On your phone and on our server</td></tr>
         <tr><td><strong>Copy of your game progress</strong> (same as above)</td><td>Cloud backup, so you don’t lose your progress</td><td>Our server</td></tr>
-        <tr><td><strong>Nickname</strong> you choose and your <strong>best scores</strong> (Sort levels completed, Blocks best score)</td><td>To show the public ranking. Only if you choose to take part</td><td>Our server, visible to all players</td></tr>
+        <tr><td><strong>Nickname</strong> (a random one given automatically, or one you choose), <strong>country</strong> (two-letter code from your phone’s region setting, not GPS) and your <strong>scores</strong> (Sort levels, Blocks best score, Expedition best run, and this week’s tournament scores)</td><td>To show the public ranking and the weekly tournament, and to give the weekly prizes</td><td>Our server, visible to all players</td></tr>
+        <tr><td><strong>Usage statistics</strong> collected by Firebase Analytics: screens opened, game events (levels completed, games played, rewards collected, shares), an app instance ID, device model, OS version, app version and approximate country</td><td>To understand how the game is played and improve it. Only with your consent (see section 5)</td><td>Google</td></tr>
+        <tr><td><strong>Crash reports</strong> collected by Sentry: what went wrong, device model, OS and app version, and the last screens opened before the error</td><td>To find and fix bugs</td><td>Sentry (EU servers)</td></tr>
         <tr><td><strong>Advertising data</strong> collected by Google AdMob (see section 4)</td><td>To show ads, which keep the game free</td><td>Google</td></tr>
+        <tr><td><strong>Reminder setting</strong> (on or off)</td><td>To plan the daily reminders on your phone, if you allow notifications</td><td>On your phone only</td></tr>
       </table>
       </div>
-      <p>Legal bases (GDPR): running the game, the backup and the ranking you join are needed to provide the service you asked for (Art. 6(1)(b)). Personalised ads rely on your consent (Art. 6(1)(a)); non-personalised ads and basic security rely on our legitimate interest in keeping the game free and working (Art. 6(1)(f)).</p>
+      <p>Legal bases (GDPR): running the game, the backup, the ranking and the weekly tournament are needed to provide the game’s features (Art. 6(1)(b)). Personalised ads and usage statistics rely on your consent (Art. 6(1)(a)). Non-personalised ads, crash reports and basic security rely on our legitimate interest in keeping the game free, stable and working (Art. 6(1)(f)).</p>
       <p>We don’t collect your name, email, contacts, photos, precise location or payment details.</p>
     </section>
 
     <section class="card">
-      <h2>3. The ranking and nicknames</h2>
-      <p>The ranking is optional. If you choose a nickname, it will be shown next to your best scores to anyone who plays Facet. Please don’t use your real name or anything that identifies you. We may remove nicknames that are offensive.</p>
+      <h2>3. The ranking, weekly tournament and nicknames</h2>
+      <p>To make the ranking and the weekly tournament work for everyone, each player gets a random nickname made of a gem name and a number (for example “Opal 4821”). It is shown, with your country flag and your scores, to anyone who plays Facet. It does not identify you.</p>
+      <p>You can change your nickname at any time in Ranking. Please don’t use your real name or anything that identifies you. We may remove nicknames that are offensive. If you don’t want to appear in the ranking at all, email us your transfer code and we will remove you.</p>
+      <p>The weekly tournament runs from Monday to Sunday (UTC). At the end of each week your final place is used to give you the prizes inside the game.</p>
     </section>
 
     <section class="card">
@@ -113,8 +120,10 @@
     <section class="card">
       <h2>5. Service providers</h2>
       <ul>
-        <li><strong>Supabase</strong>: hosts our database (backup, transfer codes and ranking). Like any web service, it may keep technical logs such as IP addresses for security for a short time.</li>
+        <li><strong>Supabase</strong>: hosts our database (backup, transfer codes, ranking and weekly tournament). Like any web service, it may keep technical logs such as IP addresses for security for a short time.</li>
         <li><strong>Google AdMob</strong>: advertising (section 4).</li>
+        <li><strong>Google Firebase Analytics</strong>: usage statistics. It is turned off until the consent choice is known, and only collects when you agree in the consent message. You can change your choice at any time in the game settings. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase privacy</a>.</li>
+        <li><strong>Sentry</strong> (Functional Software, Inc.): crash reports, stored on servers in the EU. Reports don’t include your nickname, transfer code or game progress. <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Sentry privacy</a>.</li>
         <li><strong>Apple App Store / Google Play</strong>: download and installation of the game, under their own privacy policies.</li>
       </ul>
       <p>Some of these providers may process data outside the European Economic Area. When they do, they use safeguards approved under the GDPR, such as the European Commission’s Standard Contractual Clauses.</p>
@@ -124,7 +133,8 @@
       <h2>6. How long we keep it</h2>
       <ul>
         <li>Data on your phone stays until you use “Reset progress” or uninstall the game.</li>
-        <li>Your backup and ranking entry stay on our server while you play. If a player has not opened the game for 24 months, we may delete them.</li>
+        <li>Your backup, ranking entry and tournament scores stay on our server while you play. If a player has not opened the game for 24 months, we may delete them.</li>
+        <li>Usage statistics are kept by Firebase for up to 14 months. Crash reports are kept by Sentry for up to 90 days.</li>
         <li>You can ask us to delete them at any time (section 7).</li>
       </ul>
     </section>
@@ -154,15 +164,17 @@
   <!-- ===================== PORTUGUÊS ===================== -->
   <div data-lang="pt">
     <h1>Política de Privacidade</h1>
-    <p class="date">Última atualização: 8 de outubro de 2026</p>
+    <p class="date">Última atualização: 4 de novembro de 2026</p>
 
     <section class="card summary">
       <h2>Em resumo</h2>
       <ul>
         <li>Não precisas de criar conta. Nunca pedimos o teu email, telefone, nome verdadeiro ou localização.</li>
         <li>O teu progresso fica guardado no telemóvel e tem uma cópia de segurança no nosso servidor, ligada a um código aleatório, para o poderes passar para outro telemóvel.</li>
-        <li>Se entrares no ranking, a alcunha que escolheres e as tuas melhores pontuações ficam visíveis para os outros jogadores.</li>
+        <li>Todos os jogadores aparecem no ranking e no torneio semanal com uma alcunha aleatória (como “Opal 4821”), a bandeira do país e as pontuações. Podes mudar a alcunha quando quiseres.</li>
         <li>O jogo mostra anúncios do Google AdMob. Na UE/Reino Unido é-te pedido consentimento antes de serem mostrados anúncios personalizados.</li>
+        <li>Com o teu consentimento, usamos o Firebase Analytics para perceber como o jogo é jogado. Os relatórios de erros (Sentry) ajudam-nos a corrigir problemas.</li>
+        <li>Os lembretes diários são criados no teu telemóvel. Não nos é enviado nada por causa deles.</li>
         <li>Não vendemos os teus dados.</li>
       </ul>
     </section>
@@ -181,17 +193,22 @@
         <tr><td><strong>Progresso do jogo</strong>: níveis, moedas, skins, recordes, estatísticas, conquistas e definições do jogo (som, idioma)</td><td>Para o jogo funcionar e lembrar onde ficaste</td><td>No teu telemóvel</td></tr>
         <tr><td><strong>ID de jogador aleatório, uma chave secreta e um código de transferência</strong> (ex.: GEM-ABCD-1234), criados automaticamente</td><td>Para fazer a cópia de segurança e permitir recuperar o progresso noutro telemóvel</td><td>No teu telemóvel e no nosso servidor</td></tr>
         <tr><td><strong>Cópia do progresso do jogo</strong> (o mesmo que acima)</td><td>Cópia de segurança na nuvem, para não perderes o progresso</td><td>No nosso servidor</td></tr>
-        <tr><td><strong>Alcunha</strong> que escolheres e as tuas <strong>melhores pontuações</strong> (níveis de Sort completos, recorde do Blocks)</td><td>Para mostrar o ranking público. Só se escolheres participar</td><td>No nosso servidor, visível para todos os jogadores</td></tr>
+        <tr><td><strong>Alcunha</strong> (uma aleatória dada automaticamente, ou a que escolheres), <strong>país</strong> (código de duas letras tirado da região definida no telemóvel, não do GPS) e as tuas <strong>pontuações</strong> (níveis de Sort, recorde do Blocks, melhor Expedição e pontuações do torneio desta semana)</td><td>Para mostrar o ranking público e o torneio semanal, e para dar os prémios semanais</td><td>No nosso servidor, visível para todos os jogadores</td></tr>
+        <tr><td><strong>Estatísticas de utilização</strong> recolhidas pelo Firebase Analytics: ecrãs abertos, eventos do jogo (níveis concluídos, partidas jogadas, prémios recolhidos, partilhas), um ID da instalação da app, modelo do telemóvel, versão do sistema e da app e país aproximado</td><td>Para perceber como o jogo é jogado e melhorá-lo. Só com o teu consentimento (ver secção 5)</td><td>Google</td></tr>
+        <tr><td><strong>Relatórios de erros</strong> recolhidos pelo Sentry: o que correu mal, modelo do telemóvel, versão do sistema e da app, e os últimos ecrãs abertos antes do erro</td><td>Para encontrar e corrigir problemas</td><td>Sentry (servidores na UE)</td></tr>
         <tr><td><strong>Dados de publicidade</strong> recolhidos pelo Google AdMob (ver secção 4)</td><td>Para mostrar anúncios, que mantêm o jogo gratuito</td><td>Google</td></tr>
+        <tr><td><strong>Definição dos lembretes</strong> (ligados ou desligados)</td><td>Para planear os lembretes diários no telemóvel, se permitires notificações</td><td>Só no teu telemóvel</td></tr>
       </table>
       </div>
-      <p>Fundamentos legais (RGPD): o funcionamento do jogo, a cópia de segurança e o ranking em que entrares são necessários para prestar o serviço que pediste (art. 6.º, n.º 1, al. b)). Os anúncios personalizados dependem do teu consentimento (al. a)); os anúncios não personalizados e a segurança básica assentam no nosso interesse legítimo em manter o jogo gratuito e a funcionar (al. f)).</p>
+      <p>Fundamentos legais (RGPD): o funcionamento do jogo, a cópia de segurança, o ranking e o torneio semanal são necessários para prestar as funcionalidades do jogo (art. 6.º, n.º 1, al. b)). Os anúncios personalizados e as estatísticas de utilização dependem do teu consentimento (al. a)). Os anúncios não personalizados, os relatórios de erros e a segurança básica assentam no nosso interesse legítimo em manter o jogo gratuito, estável e a funcionar (al. f)).</p>
       <p>Não recolhemos o teu nome, email, contactos, fotografias, localização precisa nem dados de pagamento.</p>
     </section>
 
     <section class="card">
-      <h2>3. O ranking e as alcunhas</h2>
-      <p>O ranking é opcional. Se escolheres uma alcunha, ela aparece ao lado das tuas melhores pontuações para qualquer pessoa que jogue Facet. Não uses o teu nome verdadeiro nem nada que te identifique. Podemos remover alcunhas ofensivas.</p>
+      <h2>3. O ranking, o torneio semanal e as alcunhas</h2>
+      <p>Para o ranking e o torneio semanal funcionarem para todos, cada jogador recebe uma alcunha aleatória formada pelo nome de uma gema e um número (por exemplo “Opal 4821”). Ela aparece, com a bandeira do teu país e as tuas pontuações, a qualquer pessoa que jogue Facet. Não te identifica.</p>
+      <p>Podes mudar a alcunha quando quiseres, no Ranking. Não uses o teu nome verdadeiro nem nada que te identifique. Podemos remover alcunhas ofensivas. Se não quiseres aparecer no ranking, envia-nos o teu código de transferência por email e retiramos-te.</p>
+      <p>O torneio semanal decorre de segunda a domingo (UTC). No fim de cada semana, o teu lugar final é usado para te dar os prémios dentro do jogo.</p>
     </section>
 
     <section class="card">
@@ -205,8 +222,10 @@
     <section class="card">
       <h2>5. Prestadores de serviços</h2>
       <ul>
-        <li><strong>Supabase</strong>: aloja a nossa base de dados (cópias de segurança, códigos de transferência e ranking). Como qualquer serviço web, pode guardar durante pouco tempo registos técnicos, como endereços IP, por razões de segurança.</li>
+        <li><strong>Supabase</strong>: aloja a nossa base de dados (cópias de segurança, códigos de transferência, ranking e torneio semanal). Como qualquer serviço web, pode guardar durante pouco tempo registos técnicos, como endereços IP, por razões de segurança.</li>
         <li><strong>Google AdMob</strong>: publicidade (secção 4).</li>
+        <li><strong>Google Firebase Analytics</strong>: estatísticas de utilização. Está desligado até a tua escolha de consentimento ser conhecida, e só recolhe se aceitares na mensagem de consentimento. Podes mudar a escolha a qualquer momento nas definições do jogo. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Privacidade do Firebase</a>.</li>
+        <li><strong>Sentry</strong> (Functional Software, Inc.): relatórios de erros, guardados em servidores na UE. Os relatórios não incluem a tua alcunha, o código de transferência nem o progresso do jogo. <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Privacidade do Sentry</a>.</li>
         <li><strong>Apple App Store / Google Play</strong>: transferência e instalação do jogo, segundo as suas próprias políticas de privacidade.</li>
       </ul>
       <p>Alguns destes prestadores podem tratar dados fora do Espaço Económico Europeu. Quando o fazem, usam garantias aprovadas ao abrigo do RGPD, como as Cláusulas Contratuais-Tipo da Comissão Europeia.</p>
@@ -216,7 +235,8 @@
       <h2>6. Durante quanto tempo guardamos</h2>
       <ul>
         <li>Os dados no telemóvel ficam até usares “Repor progresso” ou desinstalares o jogo.</li>
-        <li>A cópia de segurança e a entrada no ranking ficam no servidor enquanto jogares. Se um jogador não abrir o jogo durante 24 meses, podemos apagá-las.</li>
+        <li>A cópia de segurança, a entrada no ranking e as pontuações do torneio ficam no servidor enquanto jogares. Se um jogador não abrir o jogo durante 24 meses, podemos apagá-las.</li>
+        <li>As estatísticas de utilização ficam no Firebase até 14 meses. Os relatórios de erros ficam no Sentry até 90 dias.</li>
         <li>Podes pedir que as apaguemos a qualquer momento (secção 7).</li>
       </ul>
     </section>
