@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Saldo Verde — Brothers Code</title>
-<meta name="description" content="Saldo Verde: finanças pessoais em português, com simulador de IRS. Um projeto Brothers Code.">
+<meta name="description" content="Saldo Verde: gastos, poupanças, lembretes e um assistente de IA para as finanças em Portugal. Disponível na web e brevemente na Google Play. Um projeto Brothers Code.">
 <meta name="theme-color" content="#0D1117">
 <meta property="og:title" content="Saldo Verde — Brothers Code">
-<meta property="og:description" content="Finanças pessoais sem folhas de cálculo, com simulador de IRS.">
+<meta property="og:description" content="Gastos, poupanças, lembretes e um assistente de IA para as finanças em Portugal. Brevemente na Google Play.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://brotherscode.pro/projetos/saldo-verde">
 <meta property="og:locale" content="pt_PT">
@@ -22,13 +22,72 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/projeto.css">
 <style>
-  :root{--accent:#16A34A;--accent-soft:rgba(22,163,74,.20);}
+  :root{--accent:#16A34A;--accent-soft:rgba(22,163,74,.20);--accent-text:#4ADE80;}
+  .accent{color:var(--accent-text);}
+
   /* mockup do telemovel */
   .phone{position:relative;width:250px;height:498px;border-radius:36px;background:#05070A;
     border:8px solid #1B2331;box-shadow:0 40px 80px -30px rgba(0,0,0,.9),0 0 0 1px rgba(229,231,235,.06);
     overflow:hidden;transform:rotate(-4deg);transition:transform .6s cubic-bezier(.16,.84,.28,1);}
-  .proj-hero:hover .phone{transform:rotate(0) translateY(-8px);}
-  .phone img,.phone video{display:block;width:100%;height:auto;}
+  .stage:hover .phone{transform:rotate(0) translateY(-8px);}
+  .phone img,.phone video{display:block;width:100%;height:100%;object-fit:cover;}
+
+  .phero .meta{display:grid;grid-template-columns:repeat(2,auto);justify-content:start;gap:18px 44px;}
+
+  /* selo Play Store */
+  .soon{display:inline-flex;align-items:center;gap:9px;margin-top:20px;padding:7px 14px 7px 12px;
+    border:1px solid rgba(74,222,128,.32);border-radius:99px;background:rgba(22,163,74,.10);
+    font-size:13px;font-weight:500;color:var(--text);}
+  .soon i{width:8px;height:8px;border-radius:50%;background:var(--accent-text);flex:none;
+    animation:pulso 2.4s ease-in-out infinite;}
+  @keyframes pulso{0%,100%{box-shadow:0 0 0 0 rgba(74,222,128,.5);}50%{box-shadow:0 0 0 7px rgba(74,222,128,0);}}
+
+  /* ecras da app */
+  .show{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:clamp(28px,6vw,72px);align-items:center;margin-top:38px;}
+  .show .stage .phone{transform:none;}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;}
+  .tab{font:inherit;font-size:14px;font-weight:500;color:var(--muted);background:transparent;cursor:pointer;
+    border:1px solid var(--line);border-radius:99px;padding:8px 16px;white-space:nowrap;
+    transition:color .25s,border-color .25s,background .25s;}
+  .tab:hover{color:var(--white);border-color:var(--accent);}
+  .tab[aria-selected="true"]{color:var(--white);background:var(--accent-soft);border-color:var(--accent);}
+  .tab:focus-visible{outline:2px solid var(--accent-text);outline-offset:2px;}
+  .panel{margin-top:28px;min-height:176px;}
+  .panel h3{font-size:clamp(1.25rem,2.6vw,1.55rem);letter-spacing:-.02em;margin-bottom:10px;}
+  .panel p{margin:0;max-width:46ch;}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none;}
+  .tags li{font-size:12.5px;color:var(--text);padding:4px 11px;border-radius:7px;background:rgba(229,231,235,.06);}
+  @media(max-width:860px){
+    .show{grid-template-columns:minmax(0,1fr);}
+    .tabs{flex-wrap:nowrap;overflow-x:auto;margin:0 calc(var(--pad) * -1);padding:2px var(--pad);
+      scrollbar-width:none;}
+    .tabs::-webkit-scrollbar{display:none;}
+    .panel{min-height:0;}
+  }
+
+  /* planos */
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px;}
+  .plan{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;padding:26px;background:rgba(20,26,36,.55);}
+  .plan.top{border-color:var(--accent);background:linear-gradient(160deg,rgba(22,163,74,.13),rgba(20,26,36,.6) 60%);}
+  .plan .nome{font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);}
+  .plan .preco{font-size:2rem;font-weight:700;letter-spacing:-.03em;color:var(--white);margin-top:8px;line-height:1.2;}
+  .plan .preco small{font-size:14px;font-weight:400;letter-spacing:0;color:var(--muted);}
+  .plan ul{list-style:none;margin:18px 0 0;padding:0;}
+  .plan li{position:relative;padding:5px 0 5px 22px;font-size:14.5px;color:var(--muted);}
+  .plan li::before{content:"✓";position:absolute;left:0;color:var(--accent-text);font-weight:600;}
+  .nota{margin:20px 0 0;font-size:13.5px;}
+  @media(max-width:860px){.plans{grid-template-columns:1fr;}}
+
+  /* fundadores */
+  .founders{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px 40px;align-items:center;
+    border:1px solid rgba(74,222,128,.28);border-radius:22px;padding:clamp(28px,5vw,48px);
+    background:linear-gradient(135deg,rgba(22,163,74,.16),rgba(15,21,31,.8) 62%);}
+  .founders h2{margin-top:12px;}
+  .founders p{margin:12px 0 0;max-width:52ch;}
+  @media(max-width:760px){.founders{grid-template-columns:minmax(0,1fr);}}
+
+  .tl.now::before{background:var(--bg);border-color:var(--accent-text);}
+  .tl.now span{color:var(--accent-text);}
 </style>
 </head>
 <body>
@@ -57,20 +116,22 @@
       <div>
         <div class="eyebrow">Projeto próprio · App</div>
         <h1>Saldo <span class="accent">Verde</span></h1>
-        <p class="lead">Finanças pessoais sem folhas de cálculo. Regista as contas, percebe para onde vai o dinheiro ao fim do mês e simula o IRS com os escalões certos.</p>
+        <div class="soon"><i aria-hidden="true"></i>Brevemente na Google Play</div>
+        <p class="lead">Gastos, poupanças, lembretes e um assistente de IA que percebe de IRS, PPR e crédito habitação. Tudo num só sítio, pensado para quem vive em Portugal.</p>
         <div class="cta">
           <a class="btn solid" href="https://saldoverde.pt" target="_blank" rel="noopener">Abrir a app</a>
-          <a class="btn ghost" href="#funcionalidades">O que faz</a>
+          <a class="btn ghost" href="#ecras">Ver por dentro</a>
         </div>
         <div class="meta">
-          <div><span>Estado</span><b>Disponível</b></div>
-          <div><span>Plataformas</span><b>Android e Web</b></div>
-          <div><span>Idioma</span><b>Português</b></div>
+          <div><span>Estado</span><b>Disponível na web</b></div>
+          <div><span>Android</span><b>Em testes</b></div>
+          <div><span>Idiomas</span><b>PT, EN, ES</b></div>
+          <div><span>Preço</span><b>Grátis para começar</b></div>
         </div>
       </div>
       <div class="stage">
-        <div class="phone proj-hero">
-            <video src="/assets/saldo-verde-demo.mp4" poster="/assets/saldo-verde.jpg" autoplay loop muted playsinline preload="auto" width="360" height="728" aria-label="Demonstração do Saldo Verde"></video>
+        <div class="phone">
+          <video src="/assets/saldo-verde-demo.mp4" poster="/assets/saldo-verde.jpg" autoplay loop muted playsinline preload="auto" width="360" height="728" aria-label="Demonstração do Saldo Verde"></video>
         </div>
       </div>
     </div>
@@ -83,8 +144,39 @@
         <h2>Toda a gente sabe quanto ganha. Poucos sabem para onde vai.</h2>
       </div>
       <div class="rv">
-        <p>A maioria das apps de finanças ou é estrangeira e ignora a realidade portuguesa, ou obriga a ligar a conta bancária logo no primeiro ecrã. E quem quer perceber o IRS acaba sempre na mesma folha de Excel herdada de alguém.</p>
-        <p>O Saldo Verde nasceu para resolver isso: registo rápido de despesas, categorias que fazem sentido cá, e um simulador de IRS que usa os escalões em vigor — sem pedir acesso a nada.</p>
+        <p>A maioria das apps de finanças é estrangeira e ignora a realidade portuguesa, ou pede acesso à conta bancária logo no primeiro ecrã. E quem tem dúvidas sobre IRS ou PPR acaba quase sempre numa folha de Excel herdada de alguém.</p>
+        <p>O Saldo Verde nasceu para resolver isso: lançamentos manuais, sem ligação ao banco, categorias e contexto fiscal portugueses, e respostas claras para as dúvidas de dinheiro do dia a dia.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ecras">
+    <div class="wrap">
+      <div class="rv">
+        <div class="eyebrow">A app</div>
+        <h2>Seis ecrãs, o mês inteiro controlado</h2>
+      </div>
+      <div class="show rv">
+        <div>
+          <div class="tabs" role="tablist" aria-label="Ecrãs da app">
+            <button class="tab" role="tab" type="button" id="tab-0" aria-controls="painel" aria-selected="true">Dashboard</button>
+            <button class="tab" role="tab" type="button" id="tab-1" aria-controls="painel" aria-selected="false" tabindex="-1">Gastos</button>
+            <button class="tab" role="tab" type="button" id="tab-2" aria-controls="painel" aria-selected="false" tabindex="-1">Poupanças</button>
+            <button class="tab" role="tab" type="button" id="tab-3" aria-controls="painel" aria-selected="false" tabindex="-1">Lembretes</button>
+            <button class="tab" role="tab" type="button" id="tab-4" aria-controls="painel" aria-selected="false" tabindex="-1">Assistente</button>
+            <button class="tab" role="tab" type="button" id="tab-5" aria-controls="painel" aria-selected="false" tabindex="-1">Temas</button>
+          </div>
+          <div class="panel" id="painel" role="tabpanel" aria-labelledby="tab-0" aria-live="polite">
+            <h3 id="p-titulo">O mês inteiro num só ecrã</h3>
+            <p id="p-texto">Saldo, despesas, transações recentes e gastos por categoria, organizados assim que se abre a app.</p>
+            <ul class="tags" id="p-tags"><li>Saldo em destaque</li><li>Transações recentes</li><li>Categorias</li></ul>
+          </div>
+        </div>
+        <div class="stage">
+          <div class="phone">
+            <video id="ecra" src="https://saldoverde.pt/img/app-mobile.mp4" autoplay loop muted playsinline preload="metadata" aria-label="Ecrã Dashboard do Saldo Verde"></video>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -92,22 +184,77 @@
   <section id="funcionalidades">
     <div class="wrap">
       <div class="rv">
-        <div class="eyebrow">O que faz</div>
-        <h2>As funcionalidades principais</h2>
+        <div class="eyebrow">Pensado ao detalhe</div>
+        <h2>O que faz a diferença</h2>
       </div>
       <div class="feats">
-        <div class="feat rv"><div class="ic">€</div><h3>Registo de despesas</h3>
-          <p>Adiciona um gasto em segundos, com categorias e notas. Sem ligar a conta bancária.</p></div>
-        <div class="feat rv"><div class="ic">◫</div><h3>Resumo do mês</h3>
-          <p>Um gráfico simples mostra onde o dinheiro foi parar e como se compara ao mês anterior.</p></div>
-        <div class="feat rv"><div class="ic">%</div><h3>Simulador de IRS</h3>
-          <p>Estimativa do imposto com os escalões atuais, incluindo as regras do IRS Jovem.</p></div>
-        <div class="feat rv"><div class="ic">↻</div><h3>Despesas fixas</h3>
-          <p>Renda, prestações e subscrições entram sozinhas todos os meses.</p></div>
-        <div class="feat rv"><div class="ic">◐</div><h3>Funciona offline</h3>
-          <p>Instala-se como app e continua a registar mesmo sem rede, sincronizando depois.</p></div>
+        <div class="feat rv"><div class="ic">⛨</div><h3>Sem ligar ao banco</h3>
+          <p>Os lançamentos são manuais: cada pessoa controla o que entra na app.</p></div>
+        <div class="feat rv"><div class="ic">%</div><h3>Simulações de IRS</h3>
+          <p>Simulações do imposto no plano Premium, a par de explicações sobre IRS Jovem, PPR e Certificados de Aforro.</p></div>
+        <div class="feat rv"><div class="ic">@</div><h3>Avisos por email</h3>
+          <p>Alertas de prazos, marcos de poupança e pagamentos a vencer, nos planos pagos.</p></div>
         <div class="feat rv"><div class="ic">↓</div><h3>Exportação</h3>
-          <p>Leva os teus dados contigo quando quiseres, sem ficares preso à app.</p></div>
+          <p>Excel no plano Essencial, Excel e PDF no Premium.</p></div>
+        <div class="feat rv"><div class="ic">A</div><h3>Três idiomas</h3>
+          <p>Português, inglês e espanhol, com a moeda à escolha.</p></div>
+        <div class="feat rv"><div class="ic">▭</div><h3>Qualquer ecrã</h3>
+          <p>Computador, tablet ou telemóvel: a app adapta-se a todos.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="planos">
+    <div class="wrap">
+      <div class="rv">
+        <div class="eyebrow">Planos</div>
+        <h2>Começa grátis, sem cartão de crédito</h2>
+      </div>
+      <div class="plans">
+        <div class="plan rv">
+          <div class="nome">Gratuito</div>
+          <div class="preco">€0<small>/mês</small></div>
+          <ul>
+            <li>Despesas ilimitadas</li>
+            <li>Objetivos de poupança</li>
+            <li>Dashboard e relatórios</li>
+            <li>5 perguntas/dia ao Assistente</li>
+          </ul>
+        </div>
+        <div class="plan rv">
+          <div class="nome">Essencial</div>
+          <div class="preco">€2,49<small>/mês</small></div>
+          <ul>
+            <li>Resumo mensal</li>
+            <li>Exportação Excel</li>
+            <li>Temas de cores</li>
+            <li>15 perguntas/dia ao Assistente</li>
+          </ul>
+        </div>
+        <div class="plan top rv">
+          <div class="nome">Premium</div>
+          <div class="preco">€5,99<small>/mês</small></div>
+          <ul>
+            <li>Assistente ilimitado</li>
+            <li>Simulações de IRS</li>
+            <li>Análise avançada</li>
+            <li>Exportação Excel e PDF</li>
+          </ul>
+        </div>
+      </div>
+      <p class="nota">Cancela quando quiseres, sem fidelização. <a class="accent" href="https://saldoverde.pt/#planos" target="_blank" rel="noopener">Ver todos os detalhes dos planos</a></p>
+    </div>
+  </section>
+
+  <section id="android">
+    <div class="wrap">
+      <div class="founders rv">
+        <div>
+          <div class="eyebrow">Programa Fundadores · Só Android</div>
+          <h2>A app Android está quase na Google Play</h2>
+          <p>Testa-a antes do lançamento e ganha 1 mês Premium e o badge de Fundador.</p>
+        </div>
+        <a class="btn solid" href="https://saldoverde.pt/beta.html?origem=brotherscode" target="_blank" rel="noopener">Quero ser Fundador</a>
       </div>
     </div>
   </section>
@@ -126,11 +273,11 @@
         <div class="eyebrow">Estado</div>
         <h2>Onde vai e o que se segue</h2>
         <div class="timeline">
-          <div class="tl done"><b>Registo de despesas e resumo mensal</b><span>Concluído</span></div>
-          <div class="tl done"><b>Simulador de IRS</b><span>Concluído</span></div>
-          <div class="tl done"><b>Versão Android</b><span>Concluído</span></div>
-          <div class="tl done"><b>Interface e funcionalidades completas</b><span>Concluído</span></div>
-          <div class="tl"><b>Publicação na Google Play Store</b><span>Próximo passo</span></div>
+          <div class="tl done"><b>App web com gastos, poupanças e lembretes</b><span>Concluído</span></div>
+          <div class="tl done"><b>Assistente de IA e planos</b><span>Concluído</span></div>
+          <div class="tl done"><b>Inglês e espanhol</b><span>Concluído</span></div>
+          <div class="tl now"><b>Testes da versão Android</b><span>A decorrer</span></div>
+          <div class="tl"><b>Publicação na Google Play</b><span>Brevemente</span></div>
         </div>
       </div>
     </div>
@@ -140,12 +287,12 @@
     <div class="wrap">
       <div class="endcta rv">
         <h2>Experimenta o Saldo Verde</h2>
-        <p>Gratuito, em português e em breve disponível na Google Play Store.</p>
+        <p>Grátis para começar, na web, e brevemente na Google Play.</p>
         <a class="btn solid" href="https://saldoverde.pt" target="_blank" rel="noopener">Ir para saldoverde.pt</a>
       </div>
       <div class="sisters">
-        <a class="sister" href="/projetos/minuto-digital.html"><span>Outro projeto</span><b>Minuto Digital &#8250;</b></a>
-        <a class="sister" href="/#contacto"><span>Falar connosco</span><b>info@brotherscode.pro &#8250;</b></a>
+        <a class="sister" href="/#projetos"><span>Portefólio</span><b>Todos os projetos &#8250;</b></a>
+        <a class="sister" href="/#contacto"><span>Falar connosco</span><b>Contactar a Brothers Code &#8250;</b></a>
       </div>
     </div>
   </section>
@@ -168,6 +315,47 @@
       {threshold:.15,rootMargin:'0px 0px -6% 0px'});
     document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
   } else document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});
+
+  /* ecras da app */
+  var ECRAS=[
+    {n:'Dashboard',v:'app-mobile',t:'O mês inteiro num só ecrã',d:'Saldo, despesas, transações recentes e gastos por categoria, organizados assim que se abre a app.',g:['Saldo em destaque','Transações recentes','Categorias']},
+    {n:'Gastos',v:'shot-gastos-mobile',t:'Para onde vai cada euro',d:'Despesas e receitas categorizadas, com a evolução mês a mês e filtros para perceber os padrões.',g:['Filtros rápidos','Evolução de 6 meses','Por categoria']},
+    {n:'Poupanças',v:'shot-poupancas-mobile',t:'Objetivos reais, acompanhados',d:'Metas com ícone, valor-alvo e prazo, e o progresso sempre à vista.',g:['Objetivos','Progresso','Alertas de prazo']},
+    {n:'Lembretes',v:'shot-lembretes-mobile',t:'Nenhum pagamento esquecido',d:'Luz, água, renda, seguros ou qualquer outra conta, com o total do mês e o que falta pagar.',g:['Total do mês','Próximo pagamento','Marcar como pago']},
+    {n:'Assistente',v:'shot-assistente-mobile',t:'Um assistente de finanças portuguesas',d:'IRS, PPR, Certificados de Aforro e crédito habitação, com respostas adaptadas à realidade portuguesa.',g:['Estima o IRS','Dicas','Crédito']},
+    {n:'Temas',v:'shot-temas-mobile',t:'A app com a tua cor',d:'Seis cores, em modo escuro ou claro, guardadas na conta. Disponível a partir do plano Essencial.',g:['6 cores','Escuro e claro','Guardado na conta']}
+  ];
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  var video=document.getElementById('ecra');
+  var titulo=document.getElementById('p-titulo'),texto=document.getElementById('p-texto'),
+      tags=document.getElementById('p-tags'),painel=document.getElementById('painel');
+  var calmo=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(calmo){video.removeAttribute('autoplay');video.controls=true;}
+
+  function abrir(i,foco){
+    var e=ECRAS[i];
+    tabs.forEach(function(t,k){
+      t.setAttribute('aria-selected',k===i?'true':'false');
+      t.tabIndex=k===i?0:-1;
+    });
+    if(foco)tabs[i].focus();
+    tabs[i].scrollIntoView({block:'nearest',inline:'center',behavior:calmo?'auto':'smooth'});
+    painel.setAttribute('aria-labelledby','tab-'+i);
+    titulo.textContent=e.t;texto.textContent=e.d;
+    tags.innerHTML='';
+    e.g.forEach(function(x){var li=document.createElement('li');li.textContent=x;tags.appendChild(li);});
+    video.src='https://saldoverde.pt/img/'+e.v+'.mp4';
+    video.setAttribute('aria-label','Ecrã '+e.n+' do Saldo Verde');
+    if(!calmo){var p=video.play();if(p&&p.catch)p.catch(function(){});}
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){abrir(i);});
+    t.addEventListener('keydown',function(ev){
+      var d=ev.key==='ArrowRight'?1:ev.key==='ArrowLeft'?-1:0;
+      if(!d)return;
+      ev.preventDefault();abrir((i+d+tabs.length)%tabs.length,true);
+    });
+  });
 })();
 </script>
 </body>
