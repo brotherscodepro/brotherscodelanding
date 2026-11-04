@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Facet: Gem Puzzles — Brothers Code</title>
+<meta name="description" content="Facet: Gem Puzzles junta três jogos de gemas numa só app: Gem Sort, Blocks e Expedição. Disponível na Google Play. Um projeto Brothers Code.">
+<meta name="theme-color" content="#0D1117">
+<meta property="og:title" content="Facet: Gem Puzzles — Brothers Code">
+<meta property="og:description" content="Três jogos de gemas numa só app: Gem Sort, Blocks e Expedição. Disponível na Google Play.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://brotherscode.pro/projetos/facet">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:image" content="https://brotherscode.pro/brand/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://brotherscode.pro/projetos/facet">
+<link rel="icon" href="/brand/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/projeto.css">
+<style>
+  :root{--accent:#C026D3;--accent-soft:rgba(192,38,211,.20);--accent-text:#E879F9;}
+  .accent{color:var(--accent-text);}
+  .feat .ic{color:var(--accent-text);}
+
+  /* mockup do telemovel */
+  .phone{position:relative;width:250px;border-radius:36px;background:#05070A;
+    border:8px solid #1B2331;box-shadow:0 40px 80px -30px rgba(0,0,0,.9),0 0 0 1px rgba(229,231,235,.06);
+    overflow:hidden;transform:rotate(-4deg);transition:transform .6s cubic-bezier(.16,.84,.28,1);}
+  .stage:hover .phone{transform:rotate(0) translateY(-8px);}
+  .phone img{display:block;width:100%;height:auto;}
+
+  /* galeria de ecras */
+  .galeria{display:flex;justify-content:center;flex-wrap:wrap;gap:40px clamp(32px,8vw,96px);margin-top:44px;}
+  .galeria figure{margin:0;}
+  .galeria .phone{transform:rotate(-2.5deg);}
+  .galeria figure:nth-child(2) .phone{transform:rotate(2.5deg);}
+  .galeria figure:hover .phone{transform:rotate(0) translateY(-8px);}
+  .galeria figcaption{margin-top:24px;text-align:center;font-size:14px;color:var(--muted);}
+  .galeria figcaption b{color:var(--white);font-weight:600;}
+
+  /* selo Play Store */
+  .live{display:inline-flex;align-items:center;gap:9px;margin-top:20px;padding:7px 14px 7px 12px;
+    border:1px solid rgba(232,121,249,.34);border-radius:99px;background:rgba(192,38,211,.12);
+    font-size:13px;font-weight:500;color:var(--text);}
+  .live i{width:8px;height:8px;border-radius:50%;background:var(--accent-text);flex:none;}
+
+  .phero .meta{display:grid;grid-template-columns:repeat(2,auto);justify-content:start;gap:18px 44px;}
+
+  /* numeros */
+  .nums{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .num{border:1px solid var(--line);border-radius:14px;padding:22px 24px;background:rgba(20,26,36,.55);}
+  .num b{display:block;font-size:2rem;font-weight:700;letter-spacing:-.03em;color:var(--white);line-height:1.15;}
+  .num span{font-size:14px;color:var(--muted);}
+  @media(max-width:760px){.nums{grid-template-columns:1fr 1fr;}}
+
+  .lista{list-style:none;margin:20px 0 0;padding:0;}
+  .lista li{position:relative;padding:6px 0 6px 24px;color:var(--muted);font-size:15.5px;}
+  .lista li::before{content:"◆";position:absolute;left:0;top:9px;font-size:10px;color:var(--accent-text);}
+
+  .tl.now::before{background:var(--bg);border-color:var(--accent-text);}
+  .tl.now span{color:var(--accent-text);}
+</style>
+</head>
+<body>
+<div class="orb a" aria-hidden="true"></div><div class="orb b" aria-hidden="true"></div>
+
+<header>
+  <div class="wrap bar">
+    <a class="mark" href="/" aria-label="Brothers Code, início">
+      <svg viewBox="0 0 100 112" aria-hidden="true">
+        <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/>
+        </linearGradient></defs>
+        <path d="M50 3 95 29v54L50 109 5 83V29z" fill="none" stroke="url(#g1)" stroke-width="7" stroke-linejoin="round"/>
+        <text x="24" y="70" font-family="Poppins,sans-serif" font-weight="700" font-size="46" fill="#fff">B</text>
+        <path d="M63 41l18 15-18 15" fill="none" stroke="url(#g1)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="mark-txt"><b>BROTHERS CODE</b><span>WEBSITES &amp; APPS</span></span>
+    </a>
+    <a class="back" href="/#projetos"><i>&#8249;</i> <span class="back-full">Todos os projetos</span><span class="back-short">Projetos</span></a>
+  </div>
+</header>
+
+<main>
+  <section class="phero">
+    <div class="wrap two">
+      <div>
+        <div class="eyebrow">Projeto próprio · Jogo</div>
+        <h1>Facet: <span class="accent">Gem Puzzles</span></h1>
+        <div class="live"><i aria-hidden="true"></i>Disponível na Google Play</div>
+        <p class="lead">Três jogos de gemas numa só app: ordena, encaixa e parte em expedição contra monstros numa caverna cheia de brilho.</p>
+        <div class="cta">
+          <a class="btn solid" href="https://play.google.com/store/apps/details?id=pro.brotherscode.facet" target="_blank" rel="noopener">Instalar na Google Play</a>
+          <a class="btn ghost" href="#jogos">Ver os jogos</a>
+        </div>
+        <div class="meta">
+          <div><span>Estado</span><b>Publicado</b></div>
+          <div><span>Plataforma</span><b>Android</b></div>
+          <div><span>Idiomas</span><b>EN, PT, ES, FR, DE</b></div>
+          <div><span>Preço</span><b>Grátis, com anúncios</b></div>
+        </div>
+      </div>
+      <div class="stage">
+        <div class="phone">
+          <img src="/assets/facet-inicio.jpg" width="720" height="1560" alt="Ecrã inicial do Facet com os modos Blocks, Expedição, Sort e Desafio diário">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="nums rv">
+        <div class="num"><b>3</b><span>jogos numa só app</span></div>
+        <div class="num"><b>8</b><span>monstros, cada um no seu mundo</span></div>
+        <div class="num"><b>17</b><span>Joias para criar combinações</span></div>
+        <div class="num"><b>5</b><span>idiomas disponíveis</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="jogos">
+    <div class="wrap">
+      <div class="rv">
+        <div class="eyebrow">Os jogos</div>
+        <h2>Uma caverna, três maneiras de jogar</h2>
+      </div>
+      <div class="galeria rv">
+        <figure>
+          <div class="phone"><img src="/assets/facet-blocks.jpg" width="720" height="1560" alt="Tabuleiro do Blocks com peças de Natal" loading="lazy"></div>
+          <figcaption><b>Blocks</b> · limpa linhas e colunas</figcaption>
+        </figure>
+        <figure>
+          <div class="phone"><img src="/assets/facet-sort.jpg" width="720" height="1560" alt="Nível 6 do Gem Sort com frascos e peças de Natal" loading="lazy"></div>
+          <figcaption><b>Gem Sort</b> · uma cor por frasco</figcaption>
+        </figure>
+      </div>
+      <div class="feats">
+        <div class="feat rv"><div class="ic">◆</div><h3>Gem Sort</h3>
+          <p>Passa as gemas entre frascos até cada um ficar com uma só cor. Fácil de aprender, difícil de dominar.</p></div>
+        <div class="feat rv"><div class="ic">▦</div><h3>Blocks</h3>
+          <p>Encaixa as peças no tabuleiro, limpa linhas e colunas e encadeia combos para bater o teu recorde.</p></div>
+        <div class="feat rv"><div class="ic">⚔</div><h3>Expedição</h3>
+          <p>Uma campanha de 8 rondas contra monstros: cada linha limpa acerta no inimigo, e as Joias mudam as regras do jogo.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap two">
+      <div class="rv">
+        <div class="eyebrow">Colecionar</div>
+        <h2>Gemlings: criaturas de gema com poderes próprios</h2>
+        <p>Abre geodes para encontrar Gemlings, junta cópias para os evoluir e escolhe uma equipa de 3 para levar à Expedição. Quando o poder deles ajuda, crescem e atacam o monstro.</p>
+      </div>
+      <div class="rv">
+        <div class="eyebrow">Voltar todos os dias</div>
+        <h2>Sempre com um motivo para regressar</h2>
+        <ul class="lista">
+          <li>Desafio diário e geode grátis todos os dias</li>
+          <li>Calendário de login de 7 dias</li>
+          <li>Rankings globais com bandeiras dos países</li>
+          <li>Conquistas e skins para gemas e blocos</li>
+          <li>Joga sem internet, só o ranking precisa de ligação</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap two">
+      <div class="rv">
+        <div class="eyebrow">Por dentro</div>
+        <h2>Como está construído</h2>
+        <p>Uma app Android feita em React Native com Expo, de raiz. Os rankings e o guardar na nuvem funcionam com a Supabase, e o resto do jogo corre no próprio telemóvel, sem depender de ligação.</p>
+        <div class="stack">
+          <span>Expo</span><span>React Native</span><span>Supabase</span><span>AdMob</span><span>Firebase</span><span>Sentry</span>
+        </div>
+      </div>
+      <div class="rv">
+        <div class="eyebrow">Estado</div>
+        <h2>Onde vai e o que se segue</h2>
+        <div class="timeline">
+          <div class="tl done"><b>Gem Sort, Blocks e Expedição</b><span>Concluído</span></div>
+          <div class="tl done"><b>Teste fechado na Play Console</b><span>Concluído</span></div>
+          <div class="tl done"><b>Publicação na Google Play</b><span>Outubro de 2026</span></div>
+          <div class="tl done"><b>Calendário de login e botão de partilha</b><span>Concluído</span></div>
+          <div class="tl now"><b>Torneio semanal</b><span>A seguir</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="endcta rv">
+        <h2>Experimenta o Facet</h2>
+        <p>Grátis na Google Play, para Android.</p>
+        <a class="btn solid" href="https://play.google.com/store/apps/details?id=pro.brotherscode.facet" target="_blank" rel="noopener">Instalar na Google Play</a>
+      </div>
+      <div class="sisters">
+        <a class="sister" href="/projetos/saldo-verde.html"><span>Outro projeto</span><b>Saldo Verde &#8250;</b></a>
+        <a class="sister" href="/#contacto"><span>Falar connosco</span><b>Contactar a Brothers Code &#8250;</b></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>© 2026 Brothers Code · Feito em Portugal</div>
+    <div><a href="/">brotherscode.pro</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var h=document.querySelector('header');
+  addEventListener('scroll',function(){h.classList.toggle('stuck',scrollY>12);},{passive:true});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},
+      {threshold:.15,rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+  } else document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});
+})();
+</script>
+</body>
+</html>
