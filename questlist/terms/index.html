@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#05070F">
+<title>Questlist · Terms of Use</title>
+<style>
+  :root {
+    --bg: #05070F;
+    --card: #0D1120;
+    --card-border: #1C2338;
+    --text: #E9ECF5;
+    --text-secondary: #A7AEC4;
+    --text-muted: #6B7390;
+    --accent: #8B5CF6;
+    --accent-light: #C4B5FD;
+    --pill-bg: rgba(139, 92, 246, 0.12);
+    --pill-border: rgba(139, 92, 246, 0.35);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+  }
+
+  header.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--card-border);
+    margin-bottom: 36px;
+  }
+
+  .brand {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--text);
+    letter-spacing: 0.2px;
+  }
+
+  .brand span { color: var(--text-muted); font-weight: 500; }
+
+  .lang-toggle {
+    display: flex;
+    gap: 4px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 3px;
+  }
+
+  .lang-toggle button {
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+
+  .lang-toggle button.active {
+    background: linear-gradient(180deg, var(--accent-light), var(--accent));
+    color: #fff;
+  }
+
+  .hero { text-align: center; margin-bottom: 40px; }
+  .hero .icon { font-size: 40px; margin-bottom: 12px; }
+  .hero h1 { font-size: 26px; margin: 0 0 10px; font-weight: 800; }
+  .hero p.subtitle { color: var(--text-secondary); font-size: 14px; max-width: 480px; margin: 0 auto 18px; }
+
+  .badges { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  .badge {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--accent-light);
+    background: var(--pill-bg);
+    border: 1px solid var(--pill-border);
+    padding: 6px 12px;
+    border-radius: 999px;
+  }
+
+  nav.toc {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 6px;
+    margin-bottom: 28px;
+  }
+  nav.toc a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 14px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13.5px;
+    border-radius: 11px;
+  }
+  nav.toc a:hover { background: rgba(255,255,255,0.03); color: var(--text); }
+  nav.toc a .n {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--text-muted);
+    width: 20px;
+  }
+
+  section.chapter {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 22px 22px 20px;
+    margin-bottom: 14px;
+    scroll-margin-top: 20px;
+  }
+  section.chapter .chap-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  section.chapter .chap-head .emoji { font-size: 18px; }
+  section.chapter h2 {
+    font-size: 15.5px;
+    margin: 0;
+    font-weight: 700;
+    flex: 1;
+  }
+  section.chapter .chap-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.4px;
+  }
+  section.chapter p, section.chapter li {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    margin: 0 0 10px;
+  }
+  section.chapter ul { padding-left: 18px; margin: 0 0 10px; }
+  section.chapter p:last-child, section.chapter ul:last-child { margin-bottom: 0; }
+
+  .contact-card {
+    background: linear-gradient(135deg, rgba(139,92,246,0.14), rgba(139,92,246,0.03));
+    border: 1px solid var(--pill-border);
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    margin-top: 22px;
+  }
+  .contact-card p { font-size: 13px; color: var(--text-secondary); margin: 0 0 14px; }
+  .email-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    padding: 9px 9px 9px 16px;
+    border-radius: 999px;
+  }
+  .email-row span { font-size: 13px; font-weight: 600; }
+  .email-row button {
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 7px 13px;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 44px;
+    color: var(--text-muted);
+    font-size: 12px;
+  }
+  footer a { color: var(--text-muted); }
+
+  [data-i18n-pt] { display: none; }
+  html[data-lang="pt"] [data-i18n-en] { display: none; }
+  html[data-lang="pt"] [data-i18n-pt] { display: revert; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="topbar">
+    <div class="brand">Questlist <span>· Legal</span></div>
+    <div class="lang-toggle">
+      <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+      <button id="btn-pt" onclick="setLang('pt')">PT</button>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="icon">⚖️</div>
+    <h1 data-i18n-en>Terms of Use</h1>
+    <h1 data-i18n-pt>Termos de Utilização</h1>
+    <p class="subtitle" data-i18n-en>The rules for using Questlist, your gamified to-do list.</p>
+    <p class="subtitle" data-i18n-pt>As regras para usares o Questlist, a tua lista de tarefas gamificada.</p>
+    <div class="badges">
+      <span class="badge" data-i18n-en>📅 Last updated November 8, 2026</span>
+      <span class="badge" data-i18n-pt>📅 Última atualização: 8 de novembro de 2026</span>
+      <span class="badge" data-i18n-en>🧭 No account required</span>
+      <span class="badge" data-i18n-pt>🧭 Sem conta necessária</span>
+      <span class="badge" data-i18n-en>🆓 Free to use</span>
+      <span class="badge" data-i18n-pt>🆓 Grátis</span>
+    </div>
+  </div>
+
+  <nav class="toc">
+    <a href="#intro"><span class="n">01</span><span data-i18n-en>Introduction</span><span data-i18n-pt>Introdução</span></a>
+    <a href="#acceptance"><span class="n">02</span><span data-i18n-en>Acceptance of Terms</span><span data-i18n-pt>Aceitação dos Termos</span></a>
+    <a href="#use"><span class="n">03</span><span data-i18n-en>Using the App</span><span data-i18n-pt>Utilização da App</span></a>
+    <a href="#rewards"><span class="n">04</span><span data-i18n-en>Virtual Rewards</span><span data-i18n-pt>Recompensas Virtuais</span></a>
+    <a href="#ads"><span class="n">05</span><span data-i18n-en>Advertising</span><span data-i18n-pt>Publicidade</span></a>
+    <a href="#ip"><span class="n">06</span><span data-i18n-en>Intellectual Property</span><span data-i18n-pt>Propriedade Intelectual</span></a>
+    <a href="#disclaimer"><span class="n">07</span><span data-i18n-en>Disclaimer</span><span data-i18n-pt>Isenção de Garantias</span></a>
+    <a href="#liability"><span class="n">08</span><span data-i18n-en>Limitation of Liability</span><span data-i18n-pt>Limitação de Responsabilidade</span></a>
+    <a href="#changes"><span class="n">09</span><span data-i18n-en>Changes to These Terms</span><span data-i18n-pt>Alterações a Estes Termos</span></a>
+    <a href="#law"><span class="n">10</span><span data-i18n-en>Governing Law</span><span data-i18n-pt>Lei Aplicável</span></a>
+    <a href="#contact"><span class="n">11</span><span data-i18n-en>Contact</span><span data-i18n-pt>Contacto</span></a>
+  </nav>
+
+  <section class="chapter" id="intro">
+    <div class="chap-head"><span class="emoji">📜</span><h2 data-i18n-en>Introduction</h2><h2 data-i18n-pt>Introdução</h2><span class="chap-label">Ch. 01</span></div>
+    <p data-i18n-en>These Terms of Use ("Terms") govern your use of Questlist (the "App"), developed by Brothers Code. By downloading, installing or using Questlist, you agree to these Terms. If you do not agree, please do not use the App.</p>
+    <p data-i18n-pt>Estes Termos de Utilização ("Termos") regulam a utilização do Questlist (a "App"), desenvolvida pela Brothers Code. Ao descarregar, instalar ou utilizar o Questlist, aceitas estes Termos. Se não concordares, por favor não utilizes a App.</p>
+  </section>
+
+  <section class="chapter" id="acceptance">
+    <div class="chap-head"><span class="emoji">✅</span><h2 data-i18n-en>Acceptance of Terms</h2><h2 data-i18n-pt>Aceitação dos Termos</h2><span class="chap-label">Ch. 02</span></div>
+    <p data-i18n-en>Questlist does not require you to create an account, so there is no sign-up process to accept these Terms through. Instead, your continued use of the App after installing it constitutes acceptance of these Terms and of our <a href="/questlist/privacy" style="color:var(--accent-light)">Privacy Policy</a>.</p>
+    <p data-i18n-pt>O Questlist não exige a criação de conta, por isso não há um processo de registo para aceitares estes Termos. Em vez disso, continuares a usar a App depois de a instalares constitui a aceitação destes Termos e da nossa <a href="/questlist/privacy" style="color:var(--accent-light)">Política de Privacidade</a>.</p>
+  </section>
+
+  <section class="chapter" id="use">
+    <div class="chap-head"><span class="emoji">🎮</span><h2 data-i18n-en>Using the App</h2><h2 data-i18n-pt>Utilização da App</h2><span class="chap-label">Ch. 03</span></div>
+    <p data-i18n-en>Questlist turns your personal to-do lists, shopping lists and notes into a gamified quest log. All content you create (missions, tasks, notes) is stored locally on your device and is intended for your personal, non-commercial use.</p>
+    <ul>
+      <li data-i18n-en>You agree to use the App only for lawful purposes.</li>
+      <li data-i18n-en>You are responsible for the content you create within the App.</li>
+      <li data-i18n-en>You agree not to attempt to reverse-engineer, decompile or interfere with the App's normal operation.</li>
+    </ul>
+    <p data-i18n-pt>O Questlist transforma as tuas listas de tarefas, listas de compras e notas pessoais num diário de missões gamificado. Todo o conteúdo que crias (missões, tarefas, notas) é guardado localmente no teu dispositivo e destina-se ao teu uso pessoal e não comercial.</p>
+    <ul>
+      <li data-i18n-pt>Concordas em usar a App apenas para fins lícitos.</li>
+      <li data-i18n-pt>És responsável pelo conteúdo que crias dentro da App.</li>
+      <li data-i18n-pt>Concordas em não tentar fazer engenharia reversa, descompilar ou interferir com o funcionamento normal da App.</li>
+    </ul>
+  </section>
+
+  <section class="chapter" id="rewards">
+    <div class="chap-head"><span class="emoji">🪙</span><h2 data-i18n-en>Virtual Rewards</h2><h2 data-i18n-pt>Recompensas Virtuais</h2><span class="chap-label">Ch. 04</span></div>
+    <p data-i18n-en>Completing missions and tasks earns in-app XP, levels and coins, which can be spent in the in-app Shop to unlock cosmetic auras, themes and armor. These virtual rewards have no real-world monetary value, cannot be purchased with real money, cannot be exchanged for cash, and cannot be transferred outside the App. Deleting the App or your device's app data permanently erases this progress.</p>
+    <p data-i18n-pt>Ao completar missões e tarefas ganhas XP, níveis e moedas dentro da app, que podem ser gastos na Loja interna para desbloquear auras, temas e armaduras cosméticas. Estas recompensas virtuais não têm qualquer valor monetário real, não podem ser compradas com dinheiro real, não podem ser trocadas por dinheiro, e não podem ser transferidas para fora da App. Apagar a App ou os dados da app no teu dispositivo apaga este progresso de forma permanente.</p>
+  </section>
+
+  <section class="chapter" id="ads">
+    <div class="chap-head"><span class="emoji">📣</span><h2 data-i18n-en>Advertising</h2><h2 data-i18n-pt>Publicidade</h2><span class="chap-label">Ch. 05</span></div>
+    <p data-i18n-en>Questlist is free to use and is supported by advertising provided by Google AdMob. Ads are subject to Google's own terms and privacy practices. See our <a href="/questlist/privacy" style="color:var(--accent-light)">Privacy Policy</a> for details on how advertising data is handled.</p>
+    <p data-i18n-pt>O Questlist é gratuito e é financiado por publicidade fornecida pela Google AdMob. Os anúncios estão sujeitos aos próprios termos e práticas de privacidade da Google. Consulta a nossa <a href="/questlist/privacy" style="color:var(--accent-light)">Política de Privacidade</a> para mais detalhes sobre como os dados de publicidade são tratados.</p>
+  </section>
+
+  <section class="chapter" id="ip">
+    <div class="chap-head"><span class="emoji">🗡️</span><h2 data-i18n-en>Intellectual Property</h2><h2 data-i18n-pt>Propriedade Intelectual</h2><span class="chap-label">Ch. 06</span></div>
+    <p data-i18n-en>The App, including its design, artwork, animations, code and the Questlist name and logo, is the property of Brothers Code and is protected by applicable intellectual property laws. You may not copy, modify, distribute or create derivative works based on the App without prior written permission.</p>
+    <p data-i18n-pt>A App, incluindo o seu design, ilustrações, animações, código e o nome e logótipo Questlist, é propriedade da Brothers Code e está protegida pelas leis de propriedade intelectual aplicáveis. Não podes copiar, modificar, distribuir ou criar obras derivadas com base na App sem autorização prévia por escrito.</p>
+  </section>
+
+  <section class="chapter" id="disclaimer">
+    <div class="chap-head"><span class="emoji">⚠️</span><h2 data-i18n-en>Disclaimer</h2><h2 data-i18n-pt>Isenção de Garantias</h2><span class="chap-label">Ch. 07</span></div>
+    <p data-i18n-en>Questlist is provided "as is" and "as available", without warranties of any kind, express or implied. We do not guarantee that the App will be uninterrupted, error-free, or that your locally stored data will never be lost — you are encouraged to use the built-in export/backup feature regularly.</p>
+    <p data-i18n-pt>O Questlist é fornecido "tal como está" e "conforme disponível", sem garantias de qualquer tipo, expressas ou implícitas. Não garantimos que a App funcione de forma ininterrupta, sem erros, nem que os teus dados guardados localmente nunca se percam — recomendamos que uses regularmente a funcionalidade de exportar/backup já incluída na App.</p>
+  </section>
+
+  <section class="chapter" id="liability">
+    <div class="chap-head"><span class="emoji">🛡️</span><h2 data-i18n-en>Limitation of Liability</h2><h2 data-i18n-pt>Limitação de Responsabilidade</h2><span class="chap-label">Ch. 08</span></div>
+    <p data-i18n-en>To the maximum extent permitted by law, Brothers Code shall not be liable for any indirect, incidental or consequential damages arising from your use of, or inability to use, the App, including loss of data stored on your device.</p>
+    <p data-i18n-pt>Na medida máxima permitida por lei, a Brothers Code não será responsável por quaisquer danos indiretos, incidentais ou consequenciais resultantes da utilização, ou da impossibilidade de utilizar, a App, incluindo a perda de dados guardados no teu dispositivo.</p>
+  </section>
+
+  <section class="chapter" id="changes">
+    <div class="chap-head"><span class="emoji">🔄</span><h2 data-i18n-en>Changes to These Terms</h2><h2 data-i18n-pt>Alterações a Estes Termos</h2><span class="chap-label">Ch. 09</span></div>
+    <p data-i18n-en>We may update these Terms from time to time to reflect changes to the App or for legal reasons. The "Last updated" date at the top of this page will be revised accordingly. Continued use of the App after changes take effect constitutes acceptance of the revised Terms.</p>
+    <p data-i18n-pt>Podemos atualizar estes Termos periodicamente para refletir alterações à App ou por motivos legais. A data de "Última atualização" no topo desta página será revista em conformidade. Continuar a usar a App depois das alterações entrarem em vigor constitui a aceitação dos Termos revistos.</p>
+  </section>
+
+  <section class="chapter" id="law">
+    <div class="chap-head"><span class="emoji">⚖️</span><h2 data-i18n-en>Governing Law</h2><h2 data-i18n-pt>Lei Aplicável</h2><span class="chap-label">Ch. 10</span></div>
+    <p data-i18n-en>These Terms are governed by the laws of Portugal, without regard to conflict-of-law principles.</p>
+    <p data-i18n-pt>Estes Termos regem-se pela lei portuguesa, sem prejuízo das disposições sobre conflitos de leis.</p>
+  </section>
+
+  <div class="contact-card" id="contact">
+    <p data-i18n-en>Questions about these Terms can be sent here:</p>
+    <p data-i18n-pt>Questões sobre estes Termos podem ser enviadas para aqui:</p>
+    <div class="email-row">
+      <span id="email-text">geral@brotherscode.pro</span>
+      <button onclick="copyEmail()" id="copy-btn" data-i18n-en>Copy</button>
+      <button onclick="copyEmail()" id="copy-btn-pt" data-i18n-pt>Copiar</button>
+    </div>
+  </div>
+
+  <footer>
+    <div>Questlist</div>
+    <div data-i18n-en>Built by Brothers Code</div>
+    <div data-i18n-pt>Feito pela Brothers Code</div>
+    <div>© 2026 · <a href="https://brotherscode.pro">brotherscode.pro</a></div>
+  </footer>
+
+</div>
+
+<script>
+function setLang(lang) {
+  document.documentElement.setAttribute('data-lang', lang);
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
+  try { localStorage.setItem('questlist-legal-lang', lang); } catch (e) {}
+}
+function copyEmail() {
+  const email = document.getElementById('email-text').textContent;
+  if (navigator.clipboard) navigator.clipboard.writeText(email).catch(function(){});
+}
+(function () {
+  try {
+    const saved = localStorage.getItem('questlist-legal-lang');
+    if (saved === 'pt') setLang('pt');
+  } catch (e) {}
+})();
+</script>
+
+</body>
+</html>
